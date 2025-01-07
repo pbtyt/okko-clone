@@ -1,0 +1,21 @@
+.railButton {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+
+	padding: 16px 20px;
+
+	line-height: 18px;
+
+	border-radius: 8px;
+	background-color: #1b1a1d;
+}
+
+.railButton span {
+	color: rgba(255, 255, 255, 0.96);
+
+	font-size: 13px;
+	font-weight: 600;
+
+	white-space: nowrap;
+}

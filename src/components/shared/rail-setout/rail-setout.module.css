@@ -1,0 +1,4 @@
+.railSetoutWrapper {
+	padding: 0 calc(72px - 16px / 2);
+	margin: 1.5rem 0;
+}

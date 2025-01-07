@@ -1,0 +1,70 @@
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.wrapperWControls {
+	margin-top: 6px;
+	position: relative;
+}
+
+.controls {
+	margin-top: 20px;
+	display: flex;
+	gap: 2rem;
+}
+
+.controls > * {
+	padding: 15px;
+	background: #2c2c2c;
+	font-size: 20px;
+	color: white;
+}
+
+.carousel {
+	margin-left: calc(50% - 50vw);
+	width: min-content;
+	--item-width: calc((100vw - 16px) / 1.77);
+	--item-width-with-spacing: calc(var(--item-width) + 16px);
+	--carousel-padding: 72px;
+	--shifted-by-one-next: calc(
+		50vw - var(--carousel-padding) - var(--item-width-with-spacing) * 1.5
+	);
+	--shifted-by-one-prev: calc(
+		-50vw + var(--carousel-padding) + var(--item-width-with-spacing) * 1.5
+	);
+}
+
+.carousel.center {
+	transform: translateX(calc(50vw - 50%));
+}
+
+.carouselList {
+	list-style: none;
+	margin: 0;
+	padding: 0 var(--carousel-padding);
+	display: flex;
+	position: relative;
+}
+
+.carouselListItem {
+	min-width: var(--item-width);
+	margin: 0 calc(16px / 2);
+	transform: translateZ(0);
+}
+
+.carouselListItemCard {
+	border-radius: calc(8px * 2.5);
+	background: rgba(59, 58, 62, 0.48);
+}
+
+.carouselListItemPoster {
+	border-radius: calc(8px * 2.5);
+
+	background-color: rgba(59, 58, 62, 0.48);
+	object-fit: cover;
+	object-position: right top;
+	width: 100%;
+	height: 100%;
+}
