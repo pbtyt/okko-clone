@@ -13,44 +13,46 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
 	return (
-		<main>
+		<main className={styles.main}>
 			<Carousel />
 			<RailSetout />
-			<div className={styles.sectionsWrapper}>
-				<MoviesScroll sectionName='Продолжить просмотр'>
-					<ScrollItem />
-				</MoviesScroll>
-				<MoviesScroll sectionName='Фильмы для вас'>
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-				</MoviesScroll>
-				<MoviesScroll sectionName='Сериалы для вас'>
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-				</MoviesScroll>
-				<MoviesScroll sectionName='Мультфильмы для вас'>
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-					<ScrollItem />
-				</MoviesScroll>
-				<MoviesScroll sectionName='Запомненные'>
-					<ScrollItem />
-				</MoviesScroll>
-			</div>
+			<article className={styles.content}>
+				<div className={styles.sectionsWrapper}>
+					<MoviesScroll sectionName='Продолжить просмотр'>
+						<ScrollItem />
+					</MoviesScroll>
+					<MoviesScroll sectionName='Фильмы для вас'>
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+					</MoviesScroll>
+					<MoviesScroll sectionName='Сериалы для вас'>
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+					</MoviesScroll>
+					<MoviesScroll sectionName='Мультфильмы для вас'>
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+						<ScrollItem />
+					</MoviesScroll>
+					<MoviesScroll sectionName='Запомненные'>
+						<ScrollItem />
+					</MoviesScroll>
+				</div>
+			</article>
 		</main>
 	);
 }

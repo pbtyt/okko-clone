@@ -1,12 +1,30 @@
-import { Film } from 'lucide-react';
+import { Film, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import styles from './rail-button.module.css';
-export function RailButton() {
+import { ReactNode } from 'react';
+
+interface IRailButton
+{
+	RailButtonIcon: ReactNode;
+	RailButtonText: string;
+	RailButtonLink?: string;
+}
+
+export function RailButton(
+	{
+		RailButtonIcon,
+		RailButtonText,
+		RailButtonLink = ""
+	}: IRailButton
+) {
 	return (
-		<Link href={''}>
+		<Link href={RailButtonLink}>
 			<button className={styles.railButton}>
-				<Film color='rgba(255, 255, 255, 0.96)' />
-				<span>Фильмы</span>
+				<div className={styles.railInfo}>
+					{RailButtonIcon}
+					{/* <Film color='rgba(255, 255, 255, 0.96)' /> */}
+					<span>{RailButtonText}</span>
+				</div>
 			</button>
 		</Link>
 	);

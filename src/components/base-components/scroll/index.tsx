@@ -18,6 +18,8 @@ interface IArrow {
 
 function Arrow({ scrollRef, scrollStep, direction }: IArrow) {
 	const [arrowHover, setArrowHover] = useState<boolean>(false);
+	
+
 	return (
 		<div
 			className={styles.arrowWrapper}

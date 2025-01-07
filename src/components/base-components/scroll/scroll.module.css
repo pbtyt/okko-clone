@@ -17,10 +17,10 @@
 	align-items: center;
 
 	position: absolute;
-	top: 0;
+	bottom: 10px;
 
-	height: 100%;
-	width: 4.3rem;
+	height: 2.3rem;
+	width: 2.3rem;
 }
 
 .arrow {

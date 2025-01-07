@@ -1,14 +1,18 @@
 .railButton {
-	display: flex;
-	align-items: center;
-	gap: 0.4rem;
-
 	padding: 16px 20px;
 
 	line-height: 18px;
 
 	border-radius: 8px;
-	background-color: #1b1a1d;
+	background: #1b1a1d;
+}
+
+.railButton:hover{
+	background: radial-gradient(130% 100% at 100% 0%, #2c2b2f 0%, #1b1a1d 100%);
+}
+
+.railButton:hover .railInfo{
+	opacity: 1;
 }
 
 .railButton span {
@@ -18,4 +22,15 @@
 	font-weight: 600;
 
 	white-space: nowrap;
+}
+
+.railInfo
+{
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	opacity: .78;
+
+	transition-property: opacity;
+	transition-duration: .1s;
 }
