@@ -17,16 +17,17 @@
 	align-items: center;
 
 	position: absolute;
-	bottom: 10px;
+	top: calc(50% - (2.3rem / 2));
 
 	height: 2.3rem;
 	width: 2.3rem;
 }
 
+
 .arrow {
 	display: none;
-	align-items: center;
-	justify-content: center;
+
+	position: relative;
 
 	width: 30px;
 	height: 30px;

@@ -34,6 +34,13 @@ export default function RootLayout({
 				<Providers>
 					<Header />
 					{children}
+					
+					<div id="preview">
+						<div>
+
+						</div>
+					</div>
+					
 				</Providers>
 			</body>
 		</html>
