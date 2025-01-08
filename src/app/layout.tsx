@@ -1,4 +1,5 @@
 import { Header } from '@/components/shared/header';
+import { Preview } from '@/components/shared/preview';
 import { SITE_NAME } from '@/constants/seo.constants';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -34,13 +35,7 @@ export default function RootLayout({
 				<Providers>
 					<Header />
 					{children}
-					
-					<div id="preview">
-						<div>
-
-						</div>
-					</div>
-					
+					<Preview />
 				</Providers>
 			</body>
 		</html>
