@@ -1,5 +1,6 @@
+import { PreviewProvider } from '@/providers/preview-provider';
 import { PropsWithChildren } from 'react';
 
 export function Providers({ children }: PropsWithChildren<unknown>) {
-	return <div>{children}</div>;
+	return <PreviewProvider>{children}</PreviewProvider>;
 }
