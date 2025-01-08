@@ -9,15 +9,15 @@ export function Preview() {
 	const { isPreview, setIsPreview, previewPosition } = usePreview();
 	return (
 		isPreview && (
-			<div id='preview'>
+			<div id='preview' inert>
 				<div
 					className={styles.cardHandle}
 					style={{
 						position: 'absolute',
-						inset: 'auto auto 0px 0px',
-						transform: `translate(${previewPosition.left}px, ${
-							previewPosition.top - 500
-						}px)`,
+						inset: `${previewPosition.top}px 0 0 ${previewPosition.left}px`,
+						// transform: `translate(${previewPosition.left}px, ${
+						// 	previewPosition.top
+						// }px)`,
 					}}
 					onMouseLeave={() => {
 						setIsPreview(false);
