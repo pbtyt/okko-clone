@@ -153,4 +153,14 @@
 
 .cardFooterControls button {
 	padding: 10px;
+
+	display: flex;
+	align-items: center;
+	border-radius: 50%;
+	transition: background-color 300ms ease-out;
+}
+
+.cardFooterControls button:not(:first-child):hover {
+	transition: background-color 300ms ease;
+	background: rgba(69, 69, 69, 0.35);
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { type ElementPositionType } from '@/types/base.types';
 import {
 	createContext,
 	Dispatch,
@@ -8,7 +9,6 @@ import {
 	useState,
 } from 'react';
 
-type ElementPositionType = { left: number; top: number };
 export type PreviewContextType = {
 	isPreview: boolean;
 	setIsPreview: Dispatch<SetStateAction<boolean>>;

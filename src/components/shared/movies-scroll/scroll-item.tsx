@@ -2,24 +2,34 @@
 
 import { usePreview } from '@/hooks/usePreview';
 import { getPosition } from '@/utils/getElementPosition';
+import { getSize } from '@/utils/getElementSize';
 import { useRef } from 'react';
 import styles from './scroll-item.module.css';
 
 export function ScrollItem() {
 	const itemRef = useRef<HTMLDivElement>(null);
-	const { setIsPreview, setPreviewPosition } = usePreview();
+	const { isPreview, setIsPreview, setPreviewPosition } = usePreview();
 	return (
 		<div
 			className={styles.scrollItemWrapper}
 			ref={itemRef}
-			onMouseEnter={() => {
+			onMouseOver={() => {
+				// if (isPreview) return;
+
 				if (!itemRef?.current) {
 					console.error('Cant find element');
 					return;
 				}
 
 				setIsPreview(true);
-				setPreviewPosition(getPosition(itemRef.current));
+				setPreviewPosition({
+					left:
+						getPosition(itemRef.current).left +
+						getSize(itemRef.current).width / 2,
+					top:
+						getPosition(itemRef.current).top +
+						getSize(itemRef.current).height / 2,
+				});
 			}}
 		>
 			<img

@@ -1,0 +1,18 @@
+.dropDownWrapper {
+	position: relative;
+}
+
+.dropDownChooseMenu {
+	padding: 0.45rem;
+
+	display: block;
+
+	z-index: 99;
+	position: absolute;
+	top: 45px;
+	left: 0;
+
+	min-width: 160px;
+
+	list-style: none;
+}

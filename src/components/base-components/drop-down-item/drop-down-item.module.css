@@ -1,0 +1,14 @@
+.dropDownItem {
+	padding: 0.35rem 0.5rem;
+	margin-bottom: 0.2rem;
+
+	border-radius: 5px;
+
+	cursor: pointer;
+
+	transition: all 300ms ease;
+}
+
+.dropDownItem:last-child {
+	margin-bottom: 0;
+}

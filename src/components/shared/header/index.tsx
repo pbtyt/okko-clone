@@ -19,19 +19,29 @@ export function Header() {
 
 				<ul className={styles.navButtons}>
 					<li className={clsx(styles.navButton, 1 && styles.active)}>
-						<Link href={SITE_ROUTES_BASE.HOME}>Главная</Link>
+						<Link href={SITE_ROUTES_BASE.HOME} className={styles.hover}>
+							Главная
+						</Link>
 					</li>
 					<li className={clsx(styles.navButton, 0 && styles.active)}>
-						<Link href={SITE_ROUTES_BASE.CATALOG}>Каталог</Link>
+						<Link href={SITE_ROUTES_BASE.CATALOG} className={styles.hover}>
+							Каталог
+						</Link>
 					</li>
 					<li className={clsx(styles.navButton, 0 && styles.active)}>
-						<Link href={SITE_ROUTES_BASE.STORE}>Магазин</Link>
+						<Link href={SITE_ROUTES_BASE.STORE} className={styles.hover}>
+							Магазин
+						</Link>
 					</li>
 					<li className={clsx(styles.navButton, 0 && styles.active)}>
-						<Link href={SITE_ROUTES_BASE.MY_MOVIES}>Моё</Link>
+						<Link href={SITE_ROUTES_BASE.MY_MOVIES} className={styles.hover}>
+							Моё
+						</Link>
 					</li>
 					<li className={clsx(styles.navButton, 0 && styles.active)}>
-						<Link href={SITE_ROUTES_BASE.SPORT}>Спорт</Link>
+						<Link href={SITE_ROUTES_BASE.SPORT} className={styles.hover}>
+							Спорт
+						</Link>
 					</li>
 				</ul>
 				<div style={{ flexGrow: '1' }}></div>
@@ -40,7 +50,7 @@ export function Header() {
 						<Search color='rgba(255, 255, 255, 0.56)' />
 					</button>
 
-					<button className={styles.navButton}>
+					<button className={clsx(styles.navButton)}>
 						<Gift color='rgba(255, 255, 255, 0.56)' />
 						Ввести промокод
 					</button>

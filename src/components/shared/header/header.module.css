@@ -44,6 +44,15 @@
 	color: inherit;
 }
 
+.hover {
+	transition: color 200ms ease-out;
+}
+
+.hover:hover {
+	color: rgba(255, 255, 255, 0.96);
+	transition: color 200ms ease;
+}
+
 li.navButton.active a::after {
 	position: absolute;
 	bottom: 0;

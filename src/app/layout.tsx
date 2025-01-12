@@ -1,3 +1,4 @@
+import { DropDownContainer } from '@/components/shared/drop-down-container';
 import { Header } from '@/components/shared/header';
 import { Preview } from '@/components/shared/preview';
 import { SITE_NAME } from '@/constants/seo.constants';
@@ -36,6 +37,7 @@ export default function RootLayout({
 					<Header />
 					{children}
 					<Preview />
+					<DropDownContainer />
 				</Providers>
 			</body>
 		</html>
