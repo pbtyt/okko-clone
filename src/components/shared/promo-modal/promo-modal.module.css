@@ -1,0 +1,113 @@
+.modalContentWrapper {
+	height: 100%;
+
+	background-color: #1b1a1d;
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.modalWrapper {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.modalTitleWrapper {
+	text-align: center;
+	padding: 20px 30px;
+}
+
+.modalTitle {
+	line-height: 24px;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+.modalContent {
+	padding: 30px 80px;
+	background-color: #101011;
+
+	height: 100%;
+}
+
+.stepCard {
+	display: flex;
+	flex-direction: column;
+	background-color: #1b1a1d;
+	padding-top: 20px;
+	padding: 30px 40px;
+	border-radius: 8px;
+}
+
+.stepNumber {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.56);
+}
+
+.stepDesc {
+	font-size: 23px;
+	line-height: 28px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.stepAction {
+	margin-top: 1.5rem;
+	margin-bottom: 0.35rem;
+
+	min-height: 54px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.stepAction input {
+	padding: 15px;
+
+	flex-grow: 1;
+
+	color: rgba(255, 255, 255, 0.96);
+	caret-color: rgba(255, 255, 255, 0.96);
+	background-color: rgba(139, 136, 146, 0.32);
+	border: none;
+
+	border-radius: 8px;
+
+	line-height: 24px;
+	font-size: 16px;
+}
+
+.stepAction input::placeholder {
+	font-weight: 600;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.56);
+}
+.stepAction button {
+	background: linear-gradient(26.57deg, #3c1a70 0%, rgba(93, 14, 245, 0.83));
+	padding: 14px 20px;
+	color: rgba(255, 255, 255, 0.96);
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	border-radius: 10px;
+	font-size: 17px;
+	line-height: 22px;
+	min-height: inherit;
+}
+
+.stepCard button:disabled {
+	opacity: 0.5;
+	cursor: auto;
+}
+
+.progressBar {
+	position: relative;
+	background: #000;
+	height: 4px;
+	width: 100%;
+}
+
+.progressBarFill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: inherit;
+	background: #fff;
+}

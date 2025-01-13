@@ -4,6 +4,7 @@ import { Preview } from '@/components/shared/preview';
 import { SITE_NAME } from '@/constants/seo.constants';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Modals } from './_components/modals';
 import { Providers } from './_components/providers';
 import './global.css';
 const zen = Inter({
@@ -38,6 +39,7 @@ export default function RootLayout({
 					{children}
 					<Preview />
 					<DropDownContainer />
+					<Modals />
 				</Providers>
 			</body>
 		</html>

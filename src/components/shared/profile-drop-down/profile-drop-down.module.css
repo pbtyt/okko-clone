@@ -1,0 +1,80 @@
+.chooseMenu {
+	padding: 1.35rem 1.25rem;
+	background: #1b1a1d;
+
+	min-width: 292px;
+
+	font-size: 15px;
+	line-height: 20px;
+	font-weight: 500;
+
+	border-radius: 8px;
+
+	overflow: hidden;
+
+	display: flex;
+
+	flex-direction: column;
+	row-gap: 0.75rem;
+}
+
+.dropDownItem,
+.settings {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.dropDownItem:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+
+.settings {
+	justify-content: unset;
+	column-gap: 1.25rem;
+	margin-left: 0.5rem;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+.profileItemInfo {
+	display: flex;
+	align-items: center;
+	column-gap: 0.75rem;
+
+	font-size: 16px;
+
+	color: rgba(255, 255, 255, 0.76);
+}
+
+.profileImgWrapper {
+	position: relative;
+	width: 40px;
+	height: 40px;
+}
+
+.profileImg {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+
+.dropDownItem.selected .profileItemInfo {
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.dropDownItem.selected .profileImgWrapper::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 50%;
+	border: 2px solid #8776f9;
+	margin: -4px;
+}

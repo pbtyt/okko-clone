@@ -1,0 +1,20 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	width: 600px;
+}
+
+.searchInput {
+	line-height: 20px;
+	font-size: 15px;
+
+	color: inherit;
+	caret-color: white;
+	background: transparent;
+
+	width: calc(100% - 40px);
+
+	outline: none;
+	border: none;
+}

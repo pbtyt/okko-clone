@@ -1,3 +1,11 @@
+.header {
+	line-height: 20px;
+}
+
+.search {
+	background-color: #101011;
+}
+
 .navBar {
 	height: var(--header-height);
 
