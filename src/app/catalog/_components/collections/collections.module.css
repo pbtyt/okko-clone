@@ -1,0 +1,41 @@
+.collapse {
+	display: flex;
+	flex-direction: column;
+}
+
+.collapse button {
+	align-self: center;
+
+	padding: 14px 20px;
+	margin-top: -22px;
+
+	font-size: 17px;
+	line-height: 22px;
+
+	color: rgba(255, 255, 255, 0.96);
+
+	border-radius: 8px;
+
+	background: rgba(139, 136, 146, 0.32);
+	backdrop-filter: blur(16px);
+}
+
+.catalogWrapper {
+	max-height: 347px;
+	will-change: max-height;
+	display: block;
+	overflow: hidden;
+}
+
+.catalogWrapper.full {
+	transition: max-height 600ms ease-out;
+	max-height: 1101px;
+}
+
+.collectionWrapper {
+	padding: 4px 56px;
+	--grid-count-card: 5;
+	display: grid;
+	grid-template-columns: repeat(var(--grid-count-card), minmax(0, 1fr));
+	gap: 8px;
+}

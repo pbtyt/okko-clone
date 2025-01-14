@@ -1,4 +1,5 @@
 import { DropDownContainer } from '@/components/shared/drop-down-container';
+import { Footer } from '@/components/shared/footer';
 import { Header } from '@/components/shared/header';
 import { Preview } from '@/components/shared/preview';
 import { SITE_NAME } from '@/constants/seo.constants';
@@ -40,6 +41,7 @@ export default function RootLayout({
 					<Preview />
 					<DropDownContainer />
 					<Modals />
+					<Footer />
 				</Providers>
 			</body>
 		</html>
