@@ -1,3 +1,4 @@
+import { Button } from '@/components/base-components/button';
 import clsx from 'clsx';
 import { Globe } from 'lucide-react';
 import styles from './tab-info.module.css';
@@ -48,7 +49,12 @@ export function MyDevicesTab() {
 									</div>
 								</div>
 							</div>
-							<button className={styles.unlink}>Отвязать</button>
+							<Button
+								buttonText='Отвязать'
+								className={styles.unlink}
+								buttonColor='transparent'
+							/>
+							{/* <button className={styles.unlink}>Отвязать</button> */}
 						</li>
 					))}
 				</ul>

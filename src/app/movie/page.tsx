@@ -1,6 +1,8 @@
+import { Button } from '@/components/base-components/button';
 import clsx from 'clsx';
-import { Ban, Bookmark, Eye, Play, Star } from 'lucide-react';
+import { Ban, Bookmark, Eye, Play } from 'lucide-react';
 import Link from 'next/link';
+import { Voting } from './_components/voting';
 import styles from './movie.module.css';
 
 export default function MoviePage() {
@@ -68,7 +70,10 @@ export default function MoviePage() {
 					</div>
 
 					<div className={styles.movieControls}>
-						<button
+						<Button buttonText='Смотреть'>
+							<Play fill='currentColor' size={20} />
+						</Button>
+						{/* <button
 							className={styles.movieControlButton}
 							style={{
 								padding: '14px 20px',
@@ -76,24 +81,18 @@ export default function MoviePage() {
 									'linear-gradient(26.57deg, #3c1a70 0%, rgba(93, 14, 245, 0.83))',
 							}}
 						>
-							<Play fill='currentColor' size={20} />
 							<span>Смотреть</span>
-						</button>
-						<button
-							className={styles.movieControlButton}
-							style={{ padding: '14px 20px' }}
-						>
-							Трейлер
-						</button>
-						<button className={styles.movieControlButton}>
+						</button> */}
+						<Button buttonText='Трейлер' buttonColor='gray' />
+						<Button style={{ padding: '12px' }} buttonColor='dark'>
 							<Bookmark color='currentColor' />
-						</button>
-						<button className={styles.movieControlButton}>
+						</Button>
+						<Button style={{ padding: '12px' }} buttonColor='dark'>
 							<Eye color='currentColor' />
-						</button>
-						<button className={styles.movieControlButton}>
+						</Button>
+						<Button style={{ padding: '12px' }} buttonColor='dark'>
 							<Ban color='currentColor' />
-						</button>
+						</Button>
 					</div>
 				</div>
 			</section>
@@ -133,68 +132,7 @@ export default function MoviePage() {
 					<div className={styles.chooseRatingWrapper}>
 						<h2>Поставьте оценку</h2>
 						<p>Оценки улучшают ваши рекомендации</p>
-						<div className={styles.starsWrapper}>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-							<Star
-								size={48}
-								fill='rgba(139, 136, 146, .32)'
-								color='rgba(139, 136, 146, .32)'
-								strokeWidth={0}
-							/>
-						</div>
+						<Voting />
 					</div>
 				</div>
 			</section>

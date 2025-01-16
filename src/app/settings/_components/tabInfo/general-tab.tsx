@@ -1,3 +1,4 @@
+import { Button } from '@/components/base-components/button';
 import styles from './tab-info.module.css';
 
 export function GeneralTab() {
@@ -18,7 +19,12 @@ export function GeneralTab() {
 						value='darkyt9@gmail.com'
 					/>
 					<input type='text' placeholder='Телефон' />
-					<button disabled>Сохранить</button>
+					<Button
+						disabled
+						buttonText='Сохранить'
+						className={styles.formButton}
+					/>
+					{/* <button disabled>Сохранить</button> */}
 				</div>
 			</div>
 			<div className={styles.tabInfoSection}>

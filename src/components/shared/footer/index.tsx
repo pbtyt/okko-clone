@@ -1,3 +1,4 @@
+import { Button } from '@/components/base-components/button';
 import { Dribbble, Facebook, Instagram, Linkedin, Twitch } from 'lucide-react';
 import Link from 'next/link';
 import styles from './footer.module.css';
@@ -44,7 +45,8 @@ export function Footer() {
 							/>
 						</Link>
 					</div>
-					<button className={styles.helpButton}>Нужна помощь?</button>
+					<Button buttonText='Нужна помощь?' className={styles.helpButton} />
+					{/* <button className={styles.helpButton}>Нужна помощь?</button> */}
 				</div>
 				<div
 					style={{

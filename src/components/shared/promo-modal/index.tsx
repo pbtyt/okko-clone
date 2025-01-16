@@ -1,7 +1,7 @@
 'use client';
 
+import { Button } from '@/components/base-components/button';
 import { Modal } from '@/components/base-components/modal/modal';
-import { clamp } from '@/utils/math';
 import { useState } from 'react';
 import styles from './promo-modal.module.css';
 export function PromoModal() {
@@ -38,14 +38,16 @@ export function PromoModal() {
 							value={promocode}
 							onChange={e => setPromocode(e.target.value)}
 						/>
-						<button
+
+						<Button buttonText='Активировать' disabled={promocode === ''} />
+						{/* <button
 							disabled={promocode === ''}
 							onClick={() => {
 								setCurrentStep(prev => clamp(++prev, 1, maxSteps));
 							}}
 						>
 							Активировать
-						</button>
+						</button> */}
 					</div>
 				</div>
 			</div>

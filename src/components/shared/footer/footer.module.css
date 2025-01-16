@@ -33,17 +33,11 @@
 	column-gap: 0.5rem;
 }
 
-.helpButton {
+.footer .helpButton {
 	padding: 10px 16px;
 
-	background: linear-gradient(26.57deg, #3c1a70 0%, rgba(93, 14, 245, 0.83));
-	color: rgba(255, 255, 255, 0.96);
-
-	font-weight: 600;
 	font-size: 14px;
 	line-height: 18px;
-
-	border-radius: 8px;
 
 	align-self: flex-start;
 }

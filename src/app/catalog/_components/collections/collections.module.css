@@ -3,20 +3,12 @@
 	flex-direction: column;
 }
 
-.collapse button {
+.collapse .collapseButton {
 	align-self: center;
 
 	padding: 14px 20px;
 	margin-top: -22px;
 
-	font-size: 17px;
-	line-height: 22px;
-
-	color: rgba(255, 255, 255, 0.96);
-
-	border-radius: 8px;
-
-	background: rgba(139, 136, 146, 0.32);
 	backdrop-filter: blur(16px);
 }
 

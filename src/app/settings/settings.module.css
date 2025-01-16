@@ -10,7 +10,7 @@
 }
 
 .tab:not(:last-child) {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .tab {
@@ -45,6 +45,7 @@
 }
 
 .tabLink {
+	font-weight: 500;
 	font-size: 15px;
 	line-height: 20px;
 }

@@ -207,39 +207,6 @@
 	gap: 0.5rem;
 }
 
-.movieControlButton {
-	color: rgba(255, 255, 255, 0.96);
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	background: #1b1a1d;
-	padding: 12px;
-	color: rgba(255, 255, 255, 0.96);
-	font-weight: 600;
-	border-radius: 10px;
-	font-size: 17px;
-	line-height: 22px;
-	min-height: inherit;
-	position: relative;
-}
-
-.movieControlButton:hover::after {
-	position: absolute;
-	content: '';
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-
-	padding: 3px;
-	margin: -3px;
-	margin-left: -4.5px;
-	margin-top: -4.5px;
-
-	border: 2px solid #8776f9;
-	border-radius: calc(10px * 1.5);
-}
-
 .descWrapper {
 	margin-bottom: 72px;
 	position: relative;
@@ -321,10 +288,4 @@
 	line-height: 31px;
 	margin-top: 5px;
 	margin-bottom: 24px;
-}
-
-.starsWrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 }
