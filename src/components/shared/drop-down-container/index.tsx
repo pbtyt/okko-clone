@@ -1,7 +1,7 @@
 'use client';
 import { Popping } from '@/components/base-components/popping';
 import { useDropDown } from '@/hooks/useDropDown';
-import { ContinueDropDown } from '../continue-drop-down';
+import { ProfileDropDown } from '../profile-drop-down';
 import styles from './drop-down-container.module.css';
 
 export function DropDownContainer() {
@@ -22,8 +22,8 @@ export function DropDownContainer() {
 				// }}
 				className={styles.dropDownHandle}
 			>
-				<ContinueDropDown />
-				{/* <ProfileDropDown /> */}
+				{/* <ContinueDropDown /> */}
+				<ProfileDropDown />
 			</Popping>
 		)
 	);
