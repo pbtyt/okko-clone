@@ -1,0 +1,50 @@
+.main {
+	padding: 0 56px;
+	padding-top: 56px;
+}
+
+.tabs {
+	flex: 0 0 272px;
+	max-width: 272px;
+	margin-top: 20px;
+}
+
+.tab:not(:last-child) {
+	margin-bottom: 1rem;
+}
+
+.tab {
+	color: rgba(255, 255, 255, 0.56);
+	position: relative;
+}
+
+.tab:hover {
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.tab.active {
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.tab.active::after {
+	content: '';
+
+	position: absolute;
+	top: 50%;
+	left: -30px;
+
+	margin-top: -4px;
+
+	width: 8px;
+	height: 8px;
+
+	border-radius: 50%;
+	z-index: 2;
+
+	background: #8776f9;
+}
+
+.tabLink {
+	font-size: 15px;
+	line-height: 20px;
+}
