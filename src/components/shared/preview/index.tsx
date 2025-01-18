@@ -8,7 +8,7 @@ import { RefObject, useRef } from 'react';
 import styles from './preview.module.css';
 
 export function Preview() {
-	const { isPreview, previewPosition } = usePreview();
+	const { isPreview, previewPosition, setIsPreview } = usePreview();
 
 	const previewRef: RefObject<HTMLDivElement | null> = useRef(null);
 	return (
@@ -19,6 +19,9 @@ export function Preview() {
 				poppingRef={previewRef}
 				className={styles.cardHandle}
 				style={{ transform: 'translate(-50%, -50%)' }}
+				onMouseLeave={() => {
+					setIsPreview(false);
+				}}
 			>
 				<div className={styles.cardWrapper}>
 					<figure className={styles.cardContent}>
@@ -49,7 +52,7 @@ export function Preview() {
 											</button>
 										</div>
 									</div>
-									<Link href='' className={styles.cardLink}></Link>
+									<Link href='/movie' className={styles.cardLink}></Link>
 								</div>
 							</div>
 						</div>

@@ -35,6 +35,7 @@ body.of-h {
 }
 
 img {
+	user-select: none;
 	display: block;
 	width: 100%;
 	height: auto;

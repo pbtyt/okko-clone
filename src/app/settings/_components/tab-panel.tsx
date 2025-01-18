@@ -10,7 +10,11 @@ import styles from '../settings.module.css';
 
 export function TabPanel() {
 	const pathname = usePathname();
-	console.log(pathname.slice(1, pathname.lastIndexOf('/')));
+	const formattedPathname = pathname.slice(
+		1,
+		1 + SITE_ROUTES_BASE.SETTINGS.length
+	);
+
 	const [currentTab, setCurrentTab] = useState<string>(
 		pathname.split('/')[2] || SETTINGS_TAB_DATA[0].link
 	);
@@ -24,16 +28,16 @@ export function TabPanel() {
 						styles.tab,
 						currentTab === tabData.link && styles.active
 					)}
+					//TODO: move into Link
 					onClick={() => {
 						setCurrentTab(tabData.link);
 						console.log(tabData.link);
 					}}
 				>
 					<Link
-						href={`/${
-							pathname.slice(1, pathname.lastIndexOf('/')) ||
-							SITE_ROUTES_BASE.SETTINGS
-						}/${tabData.link}`}
+						href={`/${formattedPathname || SITE_ROUTES_BASE.SETTINGS}${
+							tabData.link
+						}`}
 						className={styles.tabLink}
 					>
 						{tabData.label}

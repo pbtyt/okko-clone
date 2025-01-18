@@ -1,0 +1,38 @@
+.tabs {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab {
+	padding: 12px 0;
+	position: relative;
+	cursor: auto;
+}
+
+.tabText {
+	letter-spacing: 1px;
+	font-size: 16px;
+	line-height: 24px;
+	color: rgba(255, 255, 255, 0.56);
+	font-weight: 500;
+}
+
+.tabText:hover,
+.tabText.active {
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.tabText:hover::after,
+.tabText.active::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 3px 3px 0 0;
+	background-color: rgba(255, 255, 255, 0.96);
+}

@@ -1,0 +1,17 @@
+.main {
+	padding: 50px 56px 70px 56px;
+}
+
+.title {
+	margin-bottom: 20px;
+}
+
+.content {
+	--grid-card-count: 5;
+
+	margin-top: 1.5rem;
+
+	display: grid;
+	grid-template-columns: repeat(var(--grid-card-count), minmax(0, 1fr));
+	gap: 8px;
+}

@@ -41,7 +41,10 @@ export function Header() {
 							</Link>
 						</li>
 						<li className={clsx(styles.navButton, 0 && styles.active)}>
-							<Link href={SITE_ROUTES_BASE.CATALOG} className={styles.hover}>
+							<Link
+								href={`${SITE_ROUTES_BASE.CATALOG}`}
+								className={styles.hover}
+							>
 								Каталог
 							</Link>
 						</li>

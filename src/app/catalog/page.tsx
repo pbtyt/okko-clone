@@ -1,7 +1,7 @@
 import { NO_INDEX_PAGE } from '@/constants/seo.constants';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { Collections } from './_components/collections';
+import { Genres } from './_components/genres';
 import styles from './catalog-page.module.css';
 
 export const metadata: Metadata = {
@@ -14,91 +14,9 @@ export default function CatalogPage() {
 			<Collections />
 			<section className={styles.genres}>
 				<h3>Жанры</h3>
+
 				<div className={styles.genresGrid}>
-					<div className={styles.genresColumn}>
-						<Link href='' className={styles.genre}>
-							Комедии
-						</Link>
-						<Link href='' className={styles.genre}>
-							Мультфильмы
-						</Link>
-						<Link href='' className={styles.genre}>
-							Музыкальное
-						</Link>
-						<Link href='' className={styles.genre}>
-							Документальное
-						</Link>
-					</div>
-					<div className={styles.genresColumn}>
-						<Link href='' className={styles.genre}>
-							Комедии
-						</Link>
-						<Link href='' className={styles.genre}>
-							Мультфильмы
-						</Link>
-						<Link href='' className={styles.genre}>
-							Музыкальное
-						</Link>
-						<Link href='' className={styles.genre}>
-							Документальное
-						</Link>
-					</div>
-					<div className={styles.genresColumn}>
-						<Link href='' className={styles.genre}>
-							Комедии
-						</Link>
-						<Link href='' className={styles.genre}>
-							Мультфильмы
-						</Link>
-						<Link href='' className={styles.genre}>
-							Музыкальное
-						</Link>
-						<Link href='' className={styles.genre}>
-							Документальное
-						</Link>
-					</div>
-					<div className={styles.genresColumn}>
-						<Link href='' className={styles.genre}>
-							Комедии
-						</Link>
-						<Link href='' className={styles.genre}>
-							Мультфильмы
-						</Link>
-						<Link href='' className={styles.genre}>
-							Музыкальное
-						</Link>
-						<Link href='' className={styles.genre}>
-							Документальное
-						</Link>
-					</div>
-					<div className={styles.genresColumn}>
-						<Link href='' className={styles.genre}>
-							Комедии
-						</Link>
-						<Link href='' className={styles.genre}>
-							Мультфильмы
-						</Link>
-						<Link href='' className={styles.genre}>
-							Музыкальное
-						</Link>
-						<Link href='' className={styles.genre}>
-							Документальное
-						</Link>
-					</div>
-					<div className={styles.genresColumn}>
-						<Link href='' className={styles.genre}>
-							Комедии
-						</Link>
-						<Link href='' className={styles.genre}>
-							Мультфильмы
-						</Link>
-						<Link href='' className={styles.genre}>
-							Музыкальное
-						</Link>
-						<Link href='' className={styles.genre}>
-							Документальное
-						</Link>
-					</div>
+					<Genres />
 				</div>
 			</section>
 		</div>

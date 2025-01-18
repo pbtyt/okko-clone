@@ -1,11 +1,11 @@
 class SITE {
 	HOME = '/';
-	CATALOG = 'catalog';
-	STORE = 'store';
-	MY_MOVIES = 'my-movies';
-	SPORT = 'sport';
-	EDIT_PROFILE = 'edit-profile';
-	SETTINGS = 'settings';
+	CATALOG = '/catalog';
+	STORE = '/store';
+	MY_MOVIES = '/my-movies';
+	SPORT = '/sport';
+	EDIT_PROFILE = '/edit-profile';
+	SETTINGS = '/settings';
 }
 
 class SETTINGS {

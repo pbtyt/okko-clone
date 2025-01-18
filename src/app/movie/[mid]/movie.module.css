@@ -1,3 +1,7 @@
+.main {
+	margin-bottom: 3rem;
+}
+
 .movieInfoWrapper {
 	position: relative;
 	aspect-ratio: 2.2 / 1;
@@ -250,42 +254,43 @@
 	background-color: #5d0ef5;
 }
 
-.movieDesc {
-	width: 100%;
-	color: rgba(255, 255, 255, 0.76);
-	font-size: 17px;
-	line-height: 24px;
+.movieStatsWrapper {
+	padding: 0 56px;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	gap: 16px;
 }
 
-.movieDesc.hidden {
-	text-overflow: ellipsis;
-	overflow: hidden;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 4;
-	word-wrap: break-word;
-	word-break: break-word;
+.movieStatColumn:first-child {
+	grid-column: 1 / 5;
+}
+.movieStatColumn:nth-child(2) {
+	grid-column: 6 / 10;
+}
+.movieStatColumn:last-child {
+	grid-column: 11 / 16;
+}
+.movieStatColumnTitle {
+	margin-bottom: 2rem;
 }
 
-.showMoreButton {
-	margin-top: 8px;
-	opacity: 0.8;
-	color: #5d0ef5;
-	font-weight: 600;
-	font-size: 17px;
-	line-height: 22px;
+.movieStat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
-.chooseRatingWrapper {
-	background-color: #101011;
-	padding: 20px;
-	border-radius: 8px;
+.movieStatItem {
+	font-size: 15px;
+	line-height: 20px;
+	font-weight: 500;
 }
 
-.chooseRatingWrapper p {
+.movieStatItemTitle {
 	color: rgba(255, 255, 255, 0.56);
-	font-size: 22px;
-	line-height: 31px;
-	margin-top: 5px;
-	margin-bottom: 24px;
+	margin-bottom: 8px;
+}
+
+.movieStatItemValue {
+	color: rgba(255, 255, 255, 0.96);
 }

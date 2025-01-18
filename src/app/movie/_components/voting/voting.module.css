@@ -1,0 +1,31 @@
+.chooseRatingWrapper {
+	align-self: flex-start;
+	background-color: #101011;
+	padding: 20px;
+	border-radius: 8px;
+}
+
+.chooseRatingWrapper p {
+	color: rgba(255, 255, 255, 0.56);
+	font-size: 22px;
+	line-height: 31px;
+	margin-top: 5px;
+	margin-bottom: 24px;
+}
+.starsWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.starNumber {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+	color: #101011;
+}

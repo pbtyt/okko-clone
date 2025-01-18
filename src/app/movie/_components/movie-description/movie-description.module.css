@@ -1,0 +1,25 @@
+.movieDesc {
+	width: 100%;
+	color: rgba(255, 255, 255, 0.76);
+	font-size: 17px;
+	line-height: 24px;
+}
+
+.movieDesc.hidden {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+.showMoreButton {
+	margin-top: 8px;
+	opacity: 0.8;
+	color: #5d0ef5;
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 22px;
+}
