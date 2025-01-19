@@ -9,7 +9,6 @@ export function Controls({ movieID }: { movieID: number }) {
 
 	const handleToggleFavorite = () => {
 		toggleFavorite();
-		setIsFavorite(prev => !prev);
 	};
 
 	return (

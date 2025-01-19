@@ -3,6 +3,7 @@
 import { DropDownItem } from '@/components/base-components/drop-down-item/drop-down-item';
 import { DropDown } from '@/components/base-components/drop-down/drop-down';
 import { SITE_ROUTES_BASE } from '@/config/page-url.config';
+import { useProfilesStore } from '@/store/profiles.store';
 import clsx from 'clsx';
 import { Check, Edit, Settings } from 'lucide-react';
 import Link from 'next/link';
@@ -10,62 +11,53 @@ import { useState } from 'react';
 import styles from './profile-drop-down.module.css';
 
 export function ProfileDropDown() {
-	const [currentSelectedProfileIndex, setCurrentSelectedProfileIndex] =
-		useState<number>(1);
+	const { profiles, currentActiveProfile, switchProfile } = useProfilesStore();
 
-	const handleOnProfileSelect = (profileIndex: number): void => {
-		setCurrentSelectedProfileIndex(profileIndex);
+	const [currentSelectedProfileIndex, setCurrentSelectedProfileIndex] =
+		useState<number>(currentActiveProfile.id);
+
+	// useEffect(() => {
+	// 	setCurrentSelectedProfileIndex(currentActiveProfile.id);
+	// 	console.log(currentActiveProfile);
+	// }, [currentActiveProfile]);
+
+	const handleOnProfileSelect = (profileID: number): void => {
+		console.log('click');
+		if (profileID === currentSelectedProfileIndex) return;
+
+		switchProfile(profileID);
+		setCurrentSelectedProfileIndex(profileID);
 	};
 
 	return (
 		<DropDown chooseMenuClassName={styles.chooseMenu}>
-			<DropDownItem
-				className={clsx(
-					currentSelectedProfileIndex === 1 && styles.selected,
-					styles.dropDownItem
-				)}
-				onClick={() => {
-					handleOnProfileSelect(1);
-				}}
-			>
-				<div className={styles.profileItemInfo}>
-					<div className={styles.profileImgWrapper}>
-						<img
-							src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-							alt=''
-							className={styles.profileImg}
-						/>
+			{profiles.map((profile, index) => (
+				<DropDownItem
+					className={clsx(
+						currentSelectedProfileIndex === profile.id && styles.selected,
+						styles.dropDownItem
+					)}
+					onClick={() => {
+						handleOnProfileSelect(profile.id);
+					}}
+					key={profile.id}
+				>
+					<div className={styles.profileItemInfo}>
+						<div className={styles.profileImgWrapper}>
+							<img
+								src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
+								alt=''
+								className={styles.profileImg}
+							/>
+						</div>
+						<span>{profile.profileName}</span>
 					</div>
-					<span>Основной профиль</span>
-				</div>
-				{currentSelectedProfileIndex === 1 && (
-					<Check color='rgba(255,255,255,.96)' />
-				)}
-			</DropDownItem>
+					{currentSelectedProfileIndex === profile.id && (
+						<Check color='rgba(255,255,255,.96)' />
+					)}
+				</DropDownItem>
+			))}
 
-			<DropDownItem
-				className={clsx(
-					currentSelectedProfileIndex === 2 && styles.selected,
-					styles.dropDownItem
-				)}
-				onClick={() => {
-					handleOnProfileSelect(2);
-				}}
-			>
-				<div className={styles.profileItemInfo}>
-					<div className={styles.profileImgWrapper}>
-						<img
-							src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-							alt=''
-							className={styles.profileImg}
-						/>
-					</div>
-					<span>Детский профиль</span>
-				</div>
-				{currentSelectedProfileIndex === 2 && (
-					<Check color='rgba(255,255,255,.96)' />
-				)}
-			</DropDownItem>
 			<div
 				style={{
 					backgroundColor: 'rgba(255, 255, 255, .15)',

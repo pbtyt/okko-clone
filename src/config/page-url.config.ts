@@ -4,7 +4,7 @@ class SITE {
 	STORE = '/store';
 	MY_MOVIES = '/my-movies';
 	SPORT = '/sport';
-	EDIT_PROFILE = '/edit-profile';
+	EDIT_PROFILE = '/edit-profiles';
 	SETTINGS = '/settings';
 }
 

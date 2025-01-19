@@ -1,0 +1,64 @@
+.main {
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+	margin-top: 5rem;
+	margin-bottom: 10rem;
+}
+
+.desc {
+	margin-top: 10px;
+	font-size: 17px;
+	line-height: 24px;
+	font-weight: 500;
+}
+
+.profilesGrid {
+	margin-top: 3.75rem;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	column-gap: 3.75rem;
+}
+
+.profile {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 8px;
+	width: 152px;
+	height: 152px;
+	color: rgba(255, 255, 255, 0.96);
+}
+
+.profileEdit {
+	color: inherit;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.55);
+}
+
+.coverWrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.profileName {
+	text-align: center;
+	font-size: 20px;
+	line-height: 26px;
+	font-weight: 600;
+}
+
+.addNewProfile {
+	background: rgba(139, 136, 146, 0.32);
+	color: rgba(255, 255, 255, 0.96);
+	width: 100%;
+	min-height: 100%;
+	border-radius: 50%;
+}

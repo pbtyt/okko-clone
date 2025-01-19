@@ -14,6 +14,7 @@ import styles from './movie.module.css';
 export default function MoviePage() {
 	const { mid: movieID } = useParams<{ mid: string }>();
 	const [movieData, setMovieData] = useState<MovieType>();
+
 	useEffect(() => {
 		setMovieData(
 			MOVIES_EXAMPLE_DATA.find(movie => movie.id === Number(movieID))

@@ -1,4 +1,5 @@
 import { useFavoriteStore } from '@/store/favorite.store';
+import { useProfilesStore } from '@/store/profiles.store';
 import {
 	Dispatch,
 	SetStateAction,
@@ -15,21 +16,32 @@ type TypeOut = {
 
 export const useFavorite = (movieID: number): TypeOut => {
 	const { addNewMovie, removeMovie, movies } = useFavoriteStore();
+	const { currentActiveProfile } = useProfilesStore();
 
 	const [isFavorite, setIsFavorite] = useState(false);
 
 	useEffect(() => {
-		setIsFavorite(movies.findIndex(movie => movie.id === movieID) !== -1);
-	}, [movies]);
+		setIsFavorite(
+			movies.findIndex(
+				movie =>
+					movie.id === movieID && movie.profileID === currentActiveProfile.id
+			) !== -1
+		);
+	}, [movies, currentActiveProfile]);
 
 	const toggleFavorite = useCallback(() => {
-		if (movies.findIndex(movie => movie.id === movieID) === -1) {
+		if (
+			movies.findIndex(
+				movie =>
+					movie.id === movieID && movie.profileID === currentActiveProfile.id
+			) === -1
+		) {
 			console.log('adding');
-			addNewMovie(movieID);
+			addNewMovie(movieID, currentActiveProfile.id);
 		} else {
-			removeMovie(movieID);
+			removeMovie(movieID, currentActiveProfile.id);
 		}
-	}, [isFavorite]);
+	}, [isFavorite, currentActiveProfile]);
 
 	return { toggleFavorite, isFavorite, setIsFavorite };
 };

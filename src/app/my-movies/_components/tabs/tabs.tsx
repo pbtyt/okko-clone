@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import styles from './tabs.module.css';
 
-type tabType = 'stored' | 'purchases' | 'history';
+export type tabType = 'stored' | 'purchases' | 'history';
 
 export function Tabs() {
 	const params = useSearchParams();

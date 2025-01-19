@@ -1,7 +1,7 @@
-import { ScrollItem } from '@/components/shared/movies-scroll/scroll-item';
 import { NO_INDEX_PAGE } from '@/constants/seo.constants';
 import { Metadata } from 'next';
-import { Tabs } from './_components/tabs';
+import { SelectedTabContent } from './_components/selected-tab-content';
+import { Tabs } from './_components/tabs/tabs';
 import styles from './my-movies.module.css';
 
 export const metadata: Metadata = {
@@ -16,13 +16,7 @@ export default function MyMoviesPage() {
 			<Tabs />
 
 			<div className={styles.content}>
-				<ScrollItem />
-				<ScrollItem />
-				<ScrollItem />
-				<ScrollItem />
-				<ScrollItem />
-				<ScrollItem />
-				<ScrollItem />
+				<SelectedTabContent />
 			</div>
 		</main>
 	);

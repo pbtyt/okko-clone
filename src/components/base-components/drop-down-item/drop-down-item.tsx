@@ -16,13 +16,7 @@ export function DropDownItem({
 }: PropsWithChildren<IDropDownItem>) {
 	const { setIsDropDown } = useDropDown();
 	return (
-		<li
-			className={clsx(styles.dropDownItem, className)}
-			{...rest}
-			onClick={() => {
-				setIsDropDown(false);
-			}}
-		>
+		<li className={clsx(styles.dropDownItem, className)} {...rest}>
 			{children}
 		</li>
 	);
