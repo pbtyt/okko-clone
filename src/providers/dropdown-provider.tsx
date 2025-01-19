@@ -8,6 +8,7 @@ import {
 	createContext,
 	Dispatch,
 	PropsWithChildren,
+	ReactNode,
 	SetStateAction,
 	useState,
 } from 'react';
@@ -19,6 +20,8 @@ export type DropDownContextType = {
 	setDropDownPosition: Dispatch<SetStateAction<ElementPositionType>>;
 	dropDownMenuSize: ElementSizeType;
 	setDropDownMenuSize: Dispatch<SetStateAction<ElementSizeType>>;
+	dropDownMenu: ReactNode;
+	setDropDownMenu: Dispatch<SetStateAction<ReactNode>>;
 };
 
 export const DropDownContext = createContext<DropDownContextType>({
@@ -28,6 +31,8 @@ export const DropDownContext = createContext<DropDownContextType>({
 	setDropDownPosition: () => {},
 	dropDownMenuSize: { width: 0, height: 0 },
 	setDropDownMenuSize: () => {},
+	dropDownMenu: null,
+	setDropDownMenu: () => null,
 });
 
 export function DropDownProvider({ children }: PropsWithChildren<unknown>) {
@@ -42,6 +47,8 @@ export function DropDownProvider({ children }: PropsWithChildren<unknown>) {
 		width: 0,
 		height: 0,
 	});
+
+	const [dropDownMenu, setDropDownMenu] = useState<ReactNode>(null);
 	return (
 		<DropDownContext.Provider
 			value={{
@@ -51,6 +58,8 @@ export function DropDownProvider({ children }: PropsWithChildren<unknown>) {
 				setDropDownPosition,
 				dropDownMenuSize,
 				setDropDownMenuSize,
+				dropDownMenu,
+				setDropDownMenu,
 			}}
 		>
 			{children}

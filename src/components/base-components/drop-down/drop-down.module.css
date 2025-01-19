@@ -3,16 +3,15 @@
 }
 
 .dropDownChooseMenu {
-	padding: 0.45rem;
-
-	display: block;
+	/* NEED TO SETUP IN CHILD DROPDOWN */
+	/* padding: 0.45rem; */
+	/* display: block; */
+	/* min-width: 160px; */
 
 	z-index: 99;
 	position: absolute;
 	top: 45px;
 	left: 0;
-
-	min-width: 160px;
 
 	list-style: none;
 }

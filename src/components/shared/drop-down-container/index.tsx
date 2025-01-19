@@ -1,19 +1,20 @@
 'use client';
 import { Popping } from '@/components/base-components/popping';
 import { useDropDown } from '@/hooks/useDropDown';
-import { ProfileDropDown } from '../profile-drop-down';
 import styles from './drop-down-container.module.css';
 
 export function DropDownContainer() {
-	const { isDropDown, DropDownPosition, dropDownMenuSize } = useDropDown();
+	const { isDropDown, DropDownPosition, dropDownMenuSize, dropDownMenu } =
+		useDropDown();
+
 	return (
 		isDropDown && (
 			<Popping
 				id='drop-down'
 				//for continue drop-down
 				position={{
-					left: DropDownPosition.left + 24 - dropDownMenuSize.width,
-					top: DropDownPosition.top - 12,
+					left: DropDownPosition.left - dropDownMenuSize.width,
+					top: DropDownPosition.top,
 				}}
 				// for profile drop-down
 				// position={{
@@ -22,8 +23,7 @@ export function DropDownContainer() {
 				// }}
 				className={styles.dropDownHandle}
 			>
-				{/* <ContinueDropDown /> */}
-				<ProfileDropDown />
+				{dropDownMenu}
 			</Popping>
 		)
 	);

@@ -2,14 +2,29 @@
 
 import { useDropDown } from '@/hooks/useDropDown';
 import { getPosition } from '@/utils/getElementPosition';
+import { getSize } from '@/utils/getElementSize';
 import { Ellipsis } from 'lucide-react';
 import { useRef } from 'react';
+import { ContinueDropDown } from '../continue-drop-down';
 import styles from './continue.module.css';
 
 export function Continue() {
-	const { setDropDownPosition, setIsDropDown, isDropDown } = useDropDown();
+	const { setDropDownPosition, setIsDropDown, isDropDown, setDropDownMenu } =
+		useDropDown();
 
 	const ref = useRef(null);
+
+	const handleOnMoreOptions = () => {
+		if (!ref?.current) return;
+
+		setIsDropDown(!isDropDown);
+
+		setDropDownPosition({
+			top: getPosition(ref.current).top - getSize(ref.current).height / 2,
+			left: getPosition(ref.current).left + getSize(ref.current).width,
+		});
+		setDropDownMenu(<ContinueDropDown />);
+	};
 	return (
 		<div className={styles.scrollItemWrapper}>
 			<div className={styles.scrollItemPosterWrapper}>
@@ -69,12 +84,7 @@ export function Continue() {
 				<button
 					ref={ref}
 					style={{ alignSelf: 'center' }}
-					onClick={() => {
-						if (!ref?.current) return;
-
-						setIsDropDown(!isDropDown);
-						setDropDownPosition(getPosition(ref.current));
-					}}
+					onClick={handleOnMoreOptions}
 				>
 					<Ellipsis
 						fill='rgba(255, 255, 255, 0.96)'

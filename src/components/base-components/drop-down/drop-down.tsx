@@ -21,7 +21,7 @@ export function DropDown({
 	isButton = false,
 	children,
 }: PropsWithChildren<IDropDown>) {
-	const { setDropDownMenuSize, setIsDropDown } = useDropDown();
+	const { setDropDownMenuSize, setIsDropDown, isDropDown } = useDropDown();
 	const chooseMenuRef = useRef(null);
 
 	const { ref, isShow } = useOutside(true);

@@ -6,21 +6,36 @@ import { SITE_ROUTES_BASE } from '@/config/page-url.config';
 import { useDropDown } from '@/hooks/useDropDown';
 import { useModal } from '@/hooks/useModal';
 import { getPosition } from '@/utils/getElementPosition';
+import { getSize } from '@/utils/getElementSize';
 import clsx from 'clsx';
 import { Gift, Search, X } from 'lucide-react';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
+import { ProfileDropDown } from '../profile-drop-down';
 import { PromoModal } from '../promo-modal';
 import { SearchInput } from '../search';
 
 export function Header() {
 	const [isSearch, setIsSearch] = useState(false);
-
-	const { setDropDownPosition, setIsDropDown, isDropDown } = useDropDown();
-
+	const { setDropDownPosition, setIsDropDown, isDropDown, setDropDownMenu } =
+		useDropDown();
 	const { showModal } = useModal();
+	const profileButtonRef = useRef(null);
 
-	const ref = useRef(null);
+	const handleOnProfileClick = () => {
+		if (!profileButtonRef?.current) return;
+		setIsDropDown(!isDropDown);
+
+		setDropDownMenu(<ProfileDropDown />);
+		setDropDownPosition({
+			top:
+				getPosition(profileButtonRef.current).top +
+				getSize(profileButtonRef.current).height / 2,
+			left:
+				getPosition(profileButtonRef.current).left +
+				getSize(profileButtonRef.current).width,
+		});
+	};
 
 	return (
 		<header className={clsx(isSearch && styles.search, styles.header)}>
@@ -90,13 +105,8 @@ export function Header() {
 
 					<button
 						className={styles.navButton}
-						ref={ref}
-						onClick={() => {
-							if (!ref?.current) return;
-
-							setIsDropDown(!isDropDown);
-							setDropDownPosition(getPosition(ref.current));
-						}}
+						ref={profileButtonRef}
+						onClick={handleOnProfileClick}
 					>
 						<div className={styles.profileButton}>
 							<img
