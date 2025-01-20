@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 export default function CatalogPage() {
 	return (
-		<div style={{ paddingTop: '50px', marginBottom: '48px' }}>
+		<div className={styles.catalogWrapper}>
 			<Collections />
 			<section className={styles.genres}>
 				<h3>Жанры</h3>

@@ -50,36 +50,9 @@ export function Continue() {
 						gap: '2px',
 					}}
 				>
-					<span
-						style={{
-							color: 'rgba(255, 255, 255, .78)',
-							fontSize: '17px',
-							lineHeight: '22px',
-							fontWeight: '500',
-						}}
-					>
-						Еретик
-					</span>
-					<span
-						style={{
-							color: 'rgba(255, 255, 255, .4)',
-							fontSize: '13px',
-							lineHeight: '18px',
-							fontWeight: '500',
-						}}
-					>
-						25 мин
-					</span>
-					<span
-						style={{
-							color: 'rgba(255, 255, 255, .56)',
-							fontSize: '13px',
-							lineHeight: '18px',
-							fontWeight: '500',
-						}}
-					>
-						1 час 30 мин
-					</span>
+					<span className={styles.title}>Еретик</span>
+					<span className={styles.timePerEpisode}>25 мин</span>
+					<span className={styles.time}>1 час 30 мин</span>
 				</div>
 				<button
 					ref={ref}

@@ -1,5 +1,6 @@
 'use client';
 
+import useCheckMobileScreen from '@/hooks/useCheckMobileScreen';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRef } from 'react';
@@ -7,65 +8,67 @@ import styles from './carousel.module.css';
 
 export function Carousel() {
 	const carouselRef = useRef<HTMLUListElement>(null);
+	const isMobile = useCheckMobileScreen();
 	return (
-		<div className={styles.wrapper}>
-			<div className={styles.wrapperWControls}>
-				<div className={clsx(styles.carousel, styles.center)}>
-					{/* 
+		!isMobile && (
+			<div className={styles.wrapper}>
+				<div className={styles.wrapperWControls}>
+					<div className={clsx(styles.carousel, styles.center)}>
+						{/* 
 						need add styles to shifting
 						right: translateX(calc(var(--item-width-with-spacing) * -1)); transition: transform 800ms ease;
 						left: translateX(calc(var(--item-width-with-spacing) * -1)); transition: transform 800ms ease;
 					*/}
-					<ul className={styles.carouselList} style={{}} ref={carouselRef}>
-						<li className={styles.carouselListItem}>
-							<Link href={''}>
-								<img
-									src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
-									alt=''
-									className={styles.carouselListItemPoster}
-								/>
-							</Link>
-						</li>
-						<li className={styles.carouselListItem}>
-							<Link href={''}>
-								<img
-									src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
-									alt=''
-									className={styles.carouselListItemPoster}
-								/>
-							</Link>
-						</li>
-						<li className={styles.carouselListItem}>
-							<Link href={''}>
-								<img
-									src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
-									alt=''
-									className={styles.carouselListItemPoster}
-								/>
-							</Link>
-						</li>
-						<li className={styles.carouselListItem}>
-							<Link href={''}>
-								<img
-									src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
-									alt=''
-									className={styles.carouselListItemPoster}
-								/>
-							</Link>
-						</li>
-						<li className={styles.carouselListItem}>
-							<Link href={''}>
-								<img
-									src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
-									alt=''
-									className={styles.carouselListItemPoster}
-								/>
-							</Link>
-						</li>
-					</ul>
-				</div>
-				<div className={styles.controls}>
-					{/* <button
+						<ul className={styles.carouselList} style={{}} ref={carouselRef}>
+							<li className={styles.carouselListItem}>
+								<Link href={''}>
+									<img
+										src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
+										alt=''
+										className={styles.carouselListItemPoster}
+									/>
+								</Link>
+							</li>
+							<li className={styles.carouselListItem}>
+								<Link href={''}>
+									<img
+										src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
+										alt=''
+										className={styles.carouselListItemPoster}
+									/>
+								</Link>
+							</li>
+							<li className={styles.carouselListItem}>
+								<Link href={''}>
+									<img
+										src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
+										alt=''
+										className={styles.carouselListItemPoster}
+									/>
+								</Link>
+							</li>
+							<li className={styles.carouselListItem}>
+								<Link href={''}>
+									<img
+										src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
+										alt=''
+										className={styles.carouselListItemPoster}
+									/>
+								</Link>
+							</li>
+							<li className={styles.carouselListItem}>
+								<Link href={''}>
+									<img
+										src='https://static.okko.tv/images/v4/6d557c19-176e-4888-af40-452dea2ba54e?height=453&scale=1&quality=80&mediaType=webp'
+										alt=''
+										className={styles.carouselListItemPoster}
+									/>
+								</Link>
+							</li>
+						</ul>
+					</div>
+					<div className={styles.controls}>
+						{/* <button
 						onClick={() => {
 							if (!carouselRef?.current) return;
 							carouselRef.current.setAttribute(
@@ -87,8 +90,9 @@ export function Carousel() {
 					>
 						Right
 					</button> */}
+					</div>
 				</div>
 			</div>
-		</div>
+		)
 	);
 }

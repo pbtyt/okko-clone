@@ -23,7 +23,6 @@
 	width: 2.3rem;
 }
 
-
 .arrow {
 	display: none;
 
@@ -37,4 +36,10 @@
 	border-radius: 50%;
 
 	cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.scroll {
+		gap: 0.5rem;
+	}
 }

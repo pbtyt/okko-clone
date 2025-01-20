@@ -9,3 +9,26 @@
 	column-gap: 15px;
 	padding: 0 56px;
 }
+
+.catalogWrapper {
+	padding-top: 50px;
+	margin-bottom: 48px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.catalogWrapper {
+		padding-top: 10px;
+		margin-bottom: calc(var(--mobile-footer-height) + 15px);
+	}
+
+	.genres h3 {
+		padding-left: 16px;
+	}
+
+	.genresGrid {
+		display: flex;
+		flex-direction: column;
+		padding: 0 16px;
+		margin-top: 20px;
+	}
+}

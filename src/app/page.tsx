@@ -21,14 +21,9 @@ export default function HomePage() {
 				<div className={styles.sectionsWrapper}>
 					<MoviesScroll sectionName='Продолжить просмотр'>
 						<Continue />
+						<Continue />
 					</MoviesScroll>
 					<MoviesScroll sectionName='Фильмы для вас'>
-						<ScrollItem />
-						<ScrollItem />
-						<ScrollItem />
-						<ScrollItem />
-						<ScrollItem />
-						<ScrollItem />
 						<ScrollItem />
 					</MoviesScroll>
 					<MoviesScroll sectionName='Сериалы для вас'>

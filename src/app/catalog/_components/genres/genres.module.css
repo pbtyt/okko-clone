@@ -15,3 +15,31 @@
 .genre:hover {
 	text-decoration: underline;
 }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.genresColumn {
+		row-gap: 0px;
+	}
+
+	.genresColumn:last-child {
+		margin-bottom: 0;
+	}
+
+	.genresColumn .genre:last-child {
+		margin-bottom: 0;
+		border-bottom: none;
+		border-bottom: none;
+	}
+
+	.genre {
+		width: 100%;
+		padding: 12px 0;
+		border-top: 1px solid rgba(139, 136, 146, 0.32);
+	}
+	.genre:hover {
+		text-decoration: none;
+	}
+	.genresColumn:last-child .genre:last-child {
+		border-bottom: 1px solid rgba(139, 136, 146, 0.32);
+	}
+}

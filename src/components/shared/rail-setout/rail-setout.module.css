@@ -2,3 +2,10 @@
 	padding: 0 calc(72px - 16px / 2);
 	margin: 1.5rem 0;
 }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.railSetoutWrapper {
+		padding: 0 16px;
+		margin: 0.5rem 0;
+	}
+}

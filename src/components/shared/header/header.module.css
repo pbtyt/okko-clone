@@ -89,3 +89,18 @@ li.navButton.active a::after {
 	display: block;
 	border-radius: 50%;
 }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.header {
+		--header-height: 2.8em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 16px;
+	}
+
+	.profileButton {
+		width: 35px;
+		height: 35px;
+	}
+}

@@ -23,3 +23,13 @@
 	height: 100%;
 	border-radius: 6px;
 }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.scrollItemWrapper {
+		min-width: calc(calc(100% - 6px * calc(8 / 4.45)) / calc(8 / 4.45));
+		/* SORRY */
+		max-width: calc(
+			calc(calc(100% - 6px * calc(8 / 4.45)) / calc(8 / 4.45)) + 0.1px
+		);
+	}
+}
