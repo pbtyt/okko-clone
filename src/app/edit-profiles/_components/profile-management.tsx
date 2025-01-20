@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@/components/base-components/button';
-import { useProfilesStore } from '@/store/profiles.store';
+import { useProfiles } from '@/hooks/useProfiles';
 import { Edit2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ import styles from '../edit-profiles.module.css';
 export function ProfileManagement() {
 	const [isEditMode, setIsEditMode] = useState(true);
 	const router = useRouter();
-	const { profiles } = useProfilesStore();
+	const { profiles } = useProfiles();
 
 	const handleOnAddNewProfileClick = (e: any) => {
 		e.preventDefault();

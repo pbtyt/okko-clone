@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/base-components/button';
+import { useProfiles } from '@/hooks/useProfiles';
 import { useProfilesStore } from '@/store/profiles.store';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -8,7 +9,8 @@ import styles from './base-profile-edit.module.css';
 
 export function BaseProfileEdit() {
 	const profileID = Number(useSearchParams().get('id'));
-	const { profiles, editProfile, deleteProfile } = useProfilesStore();
+	const { editProfile } = useProfilesStore();
+	const { profiles, deleteProfile } = useProfiles();
 	const router = useRouter();
 	const [profileName, setProfileName] = useState('');
 

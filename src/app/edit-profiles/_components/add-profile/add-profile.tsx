@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/base-components/button';
 import { Checkbox } from '@/components/base-components/checkbox/checkbox';
-import { useProfilesStore } from '@/store/profiles.store';
+import { useProfiles } from '@/hooks/useProfiles';
 import { type ProfileClassType } from '@/types/profile.types';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -14,7 +14,7 @@ export function AddProfile() {
 	const [selectedProfile, setSelectedProfile] =
 		useState<ProfileClassType>('base');
 
-	const { addProfile } = useProfilesStore();
+	const { addProfile } = useProfiles();
 
 	const handleOnContinueClick = (e: any) => {
 		e.preventDefault();

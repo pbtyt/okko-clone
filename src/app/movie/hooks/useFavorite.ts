@@ -1,5 +1,5 @@
+import { useProfiles } from '@/hooks/useProfiles';
 import { useFavoriteStore } from '@/store/favorite.store';
-import { useProfilesStore } from '@/store/profiles.store';
 import {
 	Dispatch,
 	SetStateAction,
@@ -16,7 +16,7 @@ type TypeOut = {
 
 export const useFavorite = (movieID: number): TypeOut => {
 	const { addNewMovie, removeMovie, movies } = useFavoriteStore();
-	const { currentActiveProfile } = useProfilesStore();
+	const { currentActiveProfile } = useProfiles();
 
 	const [isFavorite, setIsFavorite] = useState(false);
 

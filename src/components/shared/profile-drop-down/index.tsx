@@ -3,7 +3,7 @@
 import { DropDownItem } from '@/components/base-components/drop-down-item/drop-down-item';
 import { DropDown } from '@/components/base-components/drop-down/drop-down';
 import { SITE_ROUTES_BASE } from '@/config/page-url.config';
-import { useProfilesStore } from '@/store/profiles.store';
+import { useProfiles } from '@/hooks/useProfiles';
 import clsx from 'clsx';
 import { Check, Edit, Settings } from 'lucide-react';
 import Link from 'next/link';
@@ -11,8 +11,7 @@ import { useState } from 'react';
 import styles from './profile-drop-down.module.css';
 
 export function ProfileDropDown() {
-	const { profiles, currentActiveProfile, switchProfile } = useProfilesStore();
-
+	const { profiles, currentActiveProfile, switchProfile } = useProfiles();
 	const [currentSelectedProfileIndex, setCurrentSelectedProfileIndex] =
 		useState<number>(currentActiveProfile.id);
 
