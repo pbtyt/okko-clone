@@ -91,6 +91,10 @@ li.navButton.active a::after {
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
+	.logo {
+		width: 4em;
+	}
+
 	.header {
 		--header-height: 2.8em;
 		display: flex;

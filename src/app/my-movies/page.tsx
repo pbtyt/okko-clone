@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function MyMoviesPage() {
 	return (
 		<main className={styles.main}>
-			<h1 className={styles.title}>МОЁ</h1>
 			<Content />
 		</main>
 	);

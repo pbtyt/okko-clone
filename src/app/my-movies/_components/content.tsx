@@ -10,6 +10,8 @@ export function Content() {
 	const isMobile = useCheckMobileScreen();
 	return !isMobile ? (
 		<>
+			<h1 className={styles.title}>МОЁ</h1>
+
 			<Tabs />
 			<div className={styles.content}>
 				<SelectedTabContent />
