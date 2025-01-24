@@ -1,22 +1,23 @@
-.scrollItemWrapper {
-	flex: 0 1 0;
+.cardWrapper{
+	--spacing: .5rem;	
+
+    flex: 0 1 0;
 
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: var(--spacing);
 
 	background-color: #252527;
 	border-radius: 8px;
 
-	/* hz naschet height */
 	min-width: calc(calc(100% - 16px * calc(20 / 4)) / calc(20 / 4));
 	height: 100%;
 
 	position: relative;
 }
 
-.scrollItemPoster {
-	border-radius: 8px;
+.cardPoster{
+    border-radius: 8px;
 	border: 1px solid #252527;
 	display: block;
 	object-position: top center;
@@ -27,11 +28,7 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-	.scrollItemWrapper {
+    .cardWrapper{
 		min-width: calc(calc(100% - 6px * calc(8 / 4.45)) / calc(8 / 4.45));
-		/* SORRY */
-		/* max-width: calc(
-			calc(calc(100% - 6px * calc(8 / 4.45)) / calc(8 / 4.45)) + 0.1px
-		); */
-	}
+    }
 }
