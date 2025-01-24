@@ -1,20 +1,25 @@
 'use client';
 
+import useCheckMobileScreen from '@/hooks/useCheckMobileScreen';
+import { useModal } from '@/hooks/useModal';
 import { usePreview } from '@/hooks/usePreview';
 import { getPosition } from '@/utils/getElementPosition';
 import { getSize } from '@/utils/getElementSize';
 import { useRef } from 'react';
+import { MoreModal } from '../more-modal';
 import styles from './scroll-item.module.css';
 
 export function ScrollItem() {
 	const itemRef = useRef<HTMLDivElement>(null);
 	const { isPreview, setIsPreview, setPreviewPosition } = usePreview();
+	const isMobile = useCheckMobileScreen();
+	const { showModal } = useModal();
 	return (
 		<div
 			className={styles.scrollItemWrapper}
 			ref={itemRef}
 			onMouseOver={() => {
-				// if (isPreview) return;
+				if (isMobile) return;
 
 				if (!itemRef?.current) {
 					console.error('Cant find element');
@@ -30,6 +35,10 @@ export function ScrollItem() {
 						getPosition(itemRef.current).top +
 						getSize(itemRef.current).height / 2,
 				});
+			}}
+			onClick={() => {
+				if (!isMobile) return;
+				showModal(<MoreModal />);
 			}}
 		>
 			<img

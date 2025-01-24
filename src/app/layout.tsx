@@ -8,6 +8,7 @@ import { Inter } from 'next/font/google';
 import { Modals } from './_components/modals';
 import { Providers } from './_components/providers';
 import './global.css';
+
 const zen = Inter({
 	subsets: ['cyrillic', 'latin', 'cyrillic-ext'],
 	weight: ['300', '400', '500', '500', '700', '800'],

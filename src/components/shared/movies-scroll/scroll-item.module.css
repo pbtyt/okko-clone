@@ -1,4 +1,6 @@
 .scrollItemWrapper {
+	flex: 0 1 0;
+
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -28,8 +30,8 @@
 	.scrollItemWrapper {
 		min-width: calc(calc(100% - 6px * calc(8 / 4.45)) / calc(8 / 4.45));
 		/* SORRY */
-		max-width: calc(
+		/* max-width: calc(
 			calc(calc(100% - 6px * calc(8 / 4.45)) / calc(8 / 4.45)) + 0.1px
-		);
+		); */
 	}
 }
