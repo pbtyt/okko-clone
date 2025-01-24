@@ -9,7 +9,7 @@
 	width: 100%;
 	height: 100%;
 
-	background-color: rgba(0, 0, 0, 0.6);
+	background: none;
 
 	display: flex;
 }
@@ -27,7 +27,6 @@
 
 .modalContent {
 	margin: 0 auto;
-	background-color: #1c1c1c;
 
 	align-self: center;
 }

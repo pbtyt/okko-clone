@@ -3,9 +3,12 @@
 import { SITE_ROUTES_BASE } from '@/config/page-url.config';
 import Link from 'next/link';
 import styles from './header.module.css';
+import { useModal } from '@/hooks/useModal';
+import { ProfileModal } from '../profile-modal';
 
 export function MobileHeader() {
-	const handleOnProfileClick = () => {};
+	const {showModal} = useModal();
+	const handleOnProfileClick = () => showModal(<ProfileModal/>);
 	return (
 		<header className={styles.header}>
 			<Link href={SITE_ROUTES_BASE.HOME} className={styles.logo}>

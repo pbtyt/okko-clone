@@ -1,0 +1,71 @@
+'use client';
+
+import { Modal } from '@/components/base-components/modal/modal';
+import { useModal } from '@/hooks/useModal';
+import { ArrowLeft, DoorOpen, Edit2, LogOut, Pencil, Plus } from 'lucide-react';
+
+import styles from './profile-modal.module.css';
+import clsx from 'clsx';
+
+export function ProfileModal() {
+	const { hideModal } = useModal();
+    const handleOnAddNewProfileClick = () => {};
+	return (
+		<Modal
+			modalWidth='100%'
+			alignPos='top'
+			modalContentClassName={styles.modalContentWrapper}
+		>
+			<div className={styles.modalHeader}>
+				<button className={styles.button} onClick={() => hideModal()}>
+					<ArrowLeft color='rgba(255,255,255,0.96)' size={22} />
+				</button>
+                <span className={styles.modalHeaderTitle}>Профиль</span>
+                
+                <div style={{flexGrow: '1'}}></div>
+                
+                <button className={styles.button}>
+					<Pencil color='rgba(255,255,255,0.96)' size={22} />
+				</button>
+                <button className={styles.button}>
+					<LogOut color='rgba(255,255,255,0.96)' size={22} />
+				</button>
+			</div>
+
+			<div className={styles.modalContent}>
+				<div className={styles.profilesManagement}>
+                    <div className={styles.profiles}>
+                        <div className={clsx(styles.profile, styles.active)}>
+                            <div className={clsx(styles.coverWrapper)}>
+                                <img
+                                    src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp' 
+                                    alt=""
+                                />
+                            </div>
+                            <span className={styles.profileName}>Основной профиль</span>
+                        </div>
+                        <div className={styles.profile}>
+                            <div className={clsx(styles.coverWrapper)}>
+                                <img
+                                    src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp' 
+                                    alt=""
+                                />
+                            </div>
+                            <span className={styles.profileName}>Детский профиль</span>
+                        </div>
+                        <div className={clsx(styles.profile, styles.button)}>
+                            <button
+                                className={styles.addNewProfile}
+                                onClick={handleOnAddNewProfileClick}
+                            >
+                                <Plus color='currentColor' size={24} strokeWidth={1.5}/>
+                            </button>
+                            <span className={styles.profileName}>Добавить</span>
+                        </div>
+                    </div>
+                    <button></button>
+                </div>
+			</div>
+		</Modal>
+	);
+}
