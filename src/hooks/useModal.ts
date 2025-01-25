@@ -3,9 +3,7 @@ import { toggleBodyOverflow } from '@/utils/toggleBodyOverflow';
 import { ReactNode, useContext } from 'react';
 
 export const useModal = () => {
-	const modal = useContext(ModalContext);
-	const activeModals = modal[0];
-	const setActiveModals = modal[1];
+	const { activeModals, setActiveModals } = useContext(ModalContext);
 
 	const showModal = (modalWindow: ReactNode) => {
 		toggleBodyOverflow(false);
@@ -16,8 +14,7 @@ export const useModal = () => {
 	const hideModal = () => {
 		if (activeModals.length === 1) toggleBodyOverflow(true);
 
-		activeModals.pop();
-		setActiveModals([...activeModals]);
+		setActiveModals([...activeModals.slice(0, -1)]);
 	};
 
 	return { showModal, hideModal };

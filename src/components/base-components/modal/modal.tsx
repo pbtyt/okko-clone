@@ -12,6 +12,7 @@ interface IModal {
 	alignPos?: 'center' | 'top';
 	modalWrapperClassName?: string;
 	modalContentClassName?: string;
+	fullScreenModal?: boolean;
 }
 
 export function Modal({
@@ -20,13 +21,17 @@ export function Modal({
 	alignPos = 'center',
 	modalWrapperClassName,
 	modalContentClassName,
+	fullScreenModal,
 	children,
 }: PropsWithChildren<IModal>) {
 	const { hideModal } = useModal();
-	const { ref: modalRef, isShow } = useOutside(true, hideModal);
+	const { ref: modalRef, isShow } = useOutside(
+		true,
+		!fullScreenModal ? hideModal : () => {}
+	);
 
 	return (
-		isShow && (
+		(isShow || fullScreenModal) && (
 			<div
 				className={clsx(
 					styles.modalWrapper,

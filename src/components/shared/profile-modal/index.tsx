@@ -21,16 +21,19 @@ import {
 
 import { Button } from '@/components/base-components/button';
 import clsx from 'clsx';
+import { AddProfileModal } from '../add-profile-modal';
+import { EditProfilesModal } from '../edit-profiles-modal';
 import styles from './profile-modal.module.css';
 
 export function ProfileModal() {
-	const { hideModal } = useModal();
-	const handleOnAddNewProfileClick = () => {};
+	const { hideModal, showModal } = useModal();
+	const handleOnAddNewProfileClick = () => showModal(<AddProfileModal />);
 	return (
 		<Modal
 			modalWidth='100%'
 			alignPos='top'
 			modalContentClassName={styles.modalContentWrapper}
+			fullScreenModal
 		>
 			<div className={styles.modalHeader}>
 				<button className={styles.button} onClick={() => hideModal()}>
@@ -83,6 +86,7 @@ export function ProfileModal() {
 						buttonColor='gray'
 						buttonText='Управлять профилями'
 						className={styles.editProfilesButton}
+						onClick={() => showModal(<EditProfilesModal />)}
 					/>
 				</div>
 				<ul className={styles.settingsList}>

@@ -8,15 +8,22 @@ import {
 	useState,
 } from 'react';
 
-type TypeModalContext = [ReactNode[], Dispatch<SetStateAction<ReactNode[]>>];
+type TypeModalContext = {
+	activeModals: ReactNode[];
+	setActiveModals: Dispatch<SetStateAction<ReactNode[]>>;
+};
 
-export const ModalContext = createContext<TypeModalContext>([[], () => null]);
+export const ModalContext = createContext<TypeModalContext>({
+	activeModals: [],
+	setActiveModals: () => null,
+});
 
-export function ModalProvider({ children }: PropsWithChildren<unknown>) {
+export const ModalProvider = ({ children }: PropsWithChildren<unknown>) => {
 	const [activeModals, setActiveModals] = useState<ReactNode[]>([]);
+
 	return (
-		<ModalContext.Provider value={[activeModals, setActiveModals]}>
+		<ModalContext.Provider value={{ activeModals, setActiveModals }}>
 			{children}
 		</ModalContext.Provider>
 	);
-}
+};
