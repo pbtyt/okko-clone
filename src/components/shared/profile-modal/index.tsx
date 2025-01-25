@@ -21,8 +21,8 @@ import {
 
 import { Button } from '@/components/base-components/button';
 import clsx from 'clsx';
-import { AddProfileModal } from '../add-profile-modal';
-import { EditProfilesModal } from '../edit-profiles-modal';
+import { AddProfileModal } from './add-profile-modal';
+import { EditProfilesModal } from './edit-profiles-modal';
 import styles from './profile-modal.module.css';
 
 export function ProfileModal() {
