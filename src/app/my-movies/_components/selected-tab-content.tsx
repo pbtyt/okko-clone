@@ -19,7 +19,7 @@ export function SelectedTabContent() {
 	useEffect(() => {
 		switch (tabParam) {
 			case 'stored':
-				setData(movies);
+				setData(movies.slice(-1));
 				break;
 			case 'purchases':
 				setData([]);

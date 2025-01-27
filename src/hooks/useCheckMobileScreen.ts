@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // const useCheckMobileScreen = (): boolean => {
 // 	const [width, setWidth] = useState(0);
@@ -18,7 +18,7 @@ import { useLayoutEffect, useState } from 'react';
 const useCheckMobileScreen = (): boolean => {
 	const [isMobile, setIsMobile] = useState(false);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const updateSize = (): void => {
 			setIsMobile(window.outerWidth <= 768);
 		};

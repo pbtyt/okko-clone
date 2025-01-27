@@ -1,14 +1,15 @@
 'use client';
 
-import useCheckMobileScreen from '@/hooks/useCheckMobileScreen';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import styles from './carousel.module.css';
 
 export function Carousel() {
 	const carouselRef = useRef<HTMLUListElement>(null);
-	const isMobile = useCheckMobileScreen();
+	// const isMobile = useCheckMobileScreen();
+	const isMobile = useMediaQuery({ maxWidth: 768 });
 	return (
 		!isMobile && (
 			<div className={styles.wrapper}>

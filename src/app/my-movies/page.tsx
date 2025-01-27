@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 	...NO_INDEX_PAGE,
 };
 
+// const DynamicContent = dynamic(
+// 	() => import('./_components/content').then(module => module.Content),
+// 	{
+// 		ssr: false,
+// 	}
+// );
+
 export default function MyMoviesPage() {
 	return (
 		<main className={styles.main}>

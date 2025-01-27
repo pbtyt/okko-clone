@@ -2,12 +2,15 @@
 
 import { MoviesScroll } from '@/components/shared/movies-scroll';
 import { ScrollItem } from '@/components/shared/movies-scroll/scroll-item';
-import useCheckMobileScreen from '@/hooks/useCheckMobileScreen';
+import { useMediaQuery } from 'react-responsive';
 import styles from '../my-movies.module.css';
 import { SelectedTabContent } from './selected-tab-content';
 import { Tabs } from './tabs/tabs';
+
 export function Content() {
-	const isMobile = useCheckMobileScreen();
+	// const isMobile = useCheckMobileScreen();
+	const isMobile = useMediaQuery({ maxWidth: 768 });
+
 	return !isMobile ? (
 		<>
 			<h1 className={styles.title}>МОЁ</h1>
