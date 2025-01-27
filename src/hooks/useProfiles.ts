@@ -11,6 +11,7 @@ type TypeOut = {
 		newProfileClass: ProfileClassType
 	) => void;
 	switchProfile: (newProfileID: number) => void;
+	getProfilesCount: () => number;
 };
 export const useProfiles = (): TypeOut => {
 	const {
@@ -42,6 +43,10 @@ export const useProfiles = (): TypeOut => {
 		return profilesStore.find(profile => profile.id === profileID);
 	};
 
+	const getProfilesCount = () => {
+		return profilesStore.length;
+	};
+
 	return {
 		profiles: profilesStore,
 		currentActiveProfile,
@@ -49,5 +54,6 @@ export const useProfiles = (): TypeOut => {
 		deleteProfile,
 		getProfileByID,
 		switchProfile,
+		getProfilesCount,
 	};
 };

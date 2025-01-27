@@ -3,10 +3,11 @@
 import { Modal } from '@/components/base-components/modal/modal';
 import { useModal } from '@/hooks/useModal';
 import { useProfiles } from '@/hooks/useProfiles';
-import { ArrowLeft, Edit2, Plus } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Edit2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { AddProfileModal } from '../add-profile-modal';
 import { BaseProfileEditModal } from '../base-profile-edit-modal';
+import { SelectDefaultProfileModal } from '../select-default-profile-modal';
 import styles from './edit-profiles-modal.module.css';
 
 export function EditProfilesModal() {
@@ -14,7 +15,7 @@ export function EditProfilesModal() {
 
 	const { showModal, hideModal } = useModal();
 
-	const { profiles } = useProfiles();
+	const { profiles, getProfilesCount } = useProfiles();
 	const handleOnEditBaseProfileClick = (profileID: number) => {
 		router.push(`./?v=base-edit&id=${profileID}`);
 		showModal(<BaseProfileEditModal />);
@@ -29,7 +30,7 @@ export function EditProfilesModal() {
 		>
 			<div className={styles.modalHeader}>
 				<button className={styles.button} onClick={() => hideModal()}>
-					<ArrowLeft color='rgba(255,255,255,0.96)' size={22} />
+					<ArrowLeft color='rgba(255, 255, 255, 0.96)' size={22} />
 				</button>
 
 				<button className={styles.button}>Готово</button>
@@ -71,21 +72,35 @@ export function EditProfilesModal() {
 						</div>
 					))}
 
-					<div className={styles.profile}>
-						<button
-							className={styles.addNewProfile}
-							onClick={() => showModal(<AddProfileModal />)}
-						>
-							<Plus color='currentColor' size={48} />
-						</button>
-						<span className={styles.profileName}>Добавить</span>
-					</div>
+					{getProfilesCount() !== 5 && (
+						<div className={styles.profile}>
+							<button
+								className={styles.addNewProfile}
+								onClick={() => showModal(<AddProfileModal />)}
+							>
+								<Plus color='currentColor' size={48} />
+							</button>
+							<span className={styles.profileName}>Добавить</span>
+						</div>
+					)}
 				</div>
 			</div>
 
-			<button className={styles.modalFooter}>
+			<button
+				className={styles.modalFooter}
+				onClick={() => showModal(<SelectDefaultProfileModal />)}
+			>
 				<span>Профиль по умолчанию</span>
-				<span>Основной профиль</span>
+				<div
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						color: 'rgba(255, 255, 255, 0.56)',
+					}}
+				>
+					<span style={{ color: 'inherit' }}>Основной профиль</span>
+					<ChevronRight />
+				</div>
 			</button>
 		</Modal>
 	);

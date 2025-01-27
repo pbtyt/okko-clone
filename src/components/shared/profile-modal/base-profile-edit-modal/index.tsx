@@ -31,7 +31,8 @@ export function BaseProfileEditModal() {
 		router.push('./'); //NOTE: delete query params
 		hideModal();
 	};
-	const handleOnDeleteClick = () => showModal(<DeleteProfileModal />);
+	const handleOnDeleteClick = () =>
+		showModal(<DeleteProfileModal onDeleteProfile={handleOnBackClick} />);
 
 	useEffect(() => {
 		const profile = getProfileByID(profileID);

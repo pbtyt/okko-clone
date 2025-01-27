@@ -116,5 +116,5 @@
 
 .modalFooter span:last-child {
 	font-weight: 400;
-	color: rgba(255, 255, 255, 0.72);
+	/* color: rgba(255, 255, 255, 0.72); */
 }

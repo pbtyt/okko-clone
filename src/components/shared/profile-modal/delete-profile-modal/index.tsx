@@ -7,7 +7,11 @@ import { useProfiles } from '@/hooks/useProfiles';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './delete-profile-modal.module.css';
-export function DeleteProfileModal() {
+export function DeleteProfileModal({
+	onDeleteProfile,
+}: {
+	onDeleteProfile: () => void;
+}) {
 	const router = useRouter();
 
 	const { hideModal } = useModal();
@@ -20,6 +24,7 @@ export function DeleteProfileModal() {
 		deleteProfile(profileID);
 		router.push('./'); //NOTE: delete query params
 		hideModal();
+		onDeleteProfile();
 	};
 
 	const handleOnBackClick = () => hideModal();

@@ -22,14 +22,18 @@ import {
 import { Button } from '@/components/base-components/button';
 import { useProfiles } from '@/hooks/useProfiles';
 import clsx from 'clsx';
+import { SettingsModal } from '../settings-modal';
+import { MyDevicesModal } from '../settings-modal/my-devices-modal';
 import { AddProfileModal } from './add-profile-modal';
 import { EditProfilesModal } from './edit-profiles-modal';
 import styles from './profile-modal.module.css';
 
 export function ProfileModal() {
-	const { profiles, currentActiveProfile, switchProfile } = useProfiles();
+	const { profiles, currentActiveProfile, switchProfile, getProfilesCount } =
+		useProfiles();
 
 	const { hideModal, showModal } = useModal();
+
 	const handleOnAddNewProfileClick = () => showModal(<AddProfileModal />);
 	const handleOnProfileSelect = (profileID: number) => {
 		if (profileID === currentActiveProfile.id) return;
@@ -84,15 +88,17 @@ export function ProfileModal() {
 							</div>
 						))}
 
-						<div className={clsx(styles.profile, styles.button)}>
-							<button
-								className={styles.addNewProfile}
-								onClick={handleOnAddNewProfileClick}
-							>
-								<Plus color='currentColor' size={24} strokeWidth={1.5} />
-							</button>
-							<span className={styles.profileName}>Добавить</span>
-						</div>
+						{getProfilesCount() !== 5 && (
+							<div className={clsx(styles.profile, styles.button)}>
+								<button
+									className={styles.addNewProfile}
+									onClick={handleOnAddNewProfileClick}
+								>
+									<Plus color='currentColor' size={24} strokeWidth={1.5} />
+								</button>
+								<span className={styles.profileName}>Добавить</span>
+							</div>
+						)}
 					</div>
 					<Button
 						buttonColor='gray'
@@ -106,7 +112,10 @@ export function ProfileModal() {
 						<Gift size={24} strokeWidth={1.5} />
 						<span>Ввести промокод</span>
 					</li>
-					<li className={styles.settingsItem}>
+					<li
+						className={styles.settingsItem}
+						onClick={() => showModal(<MyDevicesModal />)}
+					>
 						<Tv size={24} strokeWidth={1.5} />
 						<span>Мои устройства</span>
 					</li>
@@ -138,7 +147,10 @@ export function ProfileModal() {
 						<Star size={24} strokeWidth={1.5} />
 						<span>Оценить приложение</span>
 					</li>
-					<li className={styles.settingsItem}>
+					<li
+						className={styles.settingsItem}
+						onClick={() => showModal(<SettingsModal />)}
+					>
 						<Settings size={24} strokeWidth={1.5} />
 						<span>Настройки</span>
 					</li>
