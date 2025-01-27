@@ -20,7 +20,7 @@ const useCheckMobileScreen = (): boolean => {
 
 	useLayoutEffect(() => {
 		const updateSize = (): void => {
-			setIsMobile(window.innerWidth <= 768);
+			setIsMobile(window.outerWidth <= 768);
 		};
 
 		window.addEventListener('resize', updateSize);
