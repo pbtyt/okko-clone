@@ -1,18 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
+
+// const useCheckMobileScreen = (): boolean => {
+// 	const [width, setWidth] = useState(0);
+
+// 	const handleWindowSizeChange = () => {
+// 		setWidth(window.outerWidth);
+// 	};
+
+// 	useEffect(() => {
+// 		window.addEventListener('resize', handleWindowSizeChange);
+// 		return () => window.removeEventListener('resize', handleWindowSizeChange);
+// 	}, []);
+
+// 	return width <= 768;
+// };
 
 const useCheckMobileScreen = (): boolean => {
-	const [width, setWidth] = useState(window.outerWidth);
+	const [isMobile, setIsMobile] = useState(false);
 
-	const handleWindowSizeChange = () => {
-		setWidth(window.outerWidth);
-	};
+	useLayoutEffect(() => {
+		const updateSize = (): void => {
+			setIsMobile(window.innerWidth <= 768);
+		};
 
-	useEffect(() => {
-		window.addEventListener('resize', handleWindowSizeChange);
-		return () => window.removeEventListener('resize', handleWindowSizeChange);
+		window.addEventListener('resize', updateSize);
+
+		return (): void => window.removeEventListener('resize', updateSize);
 	}, []);
 
-	return width <= 768;
+	return isMobile;
 };
 
 export default useCheckMobileScreen;
