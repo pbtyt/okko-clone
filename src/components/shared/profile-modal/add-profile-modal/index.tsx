@@ -4,11 +4,25 @@ import { Button } from '@/components/base-components/button';
 import { Checkbox } from '@/components/base-components/checkbox/checkbox';
 import { Modal } from '@/components/base-components/modal/modal';
 import { useModal } from '@/hooks/useModal';
+import { useProfiles } from '@/hooks/useProfiles';
+import { ProfileClassType } from '@/types/profile.types';
 import { ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
 import styles from './add-profile-modal.module.css';
 
 export function AddProfileModal() {
 	const { hideModal } = useModal();
+
+	const { addProfile } = useProfiles();
+	const [profileName, setProfileName] = useState('');
+	const [selectedProfile, setSelectedProfile] =
+		useState<ProfileClassType>('base');
+
+	const handleOnCompleteClick = (e: any) => {
+		e.preventDefault();
+		addProfile(profileName, selectedProfile);
+		hideModal();
+	};
 	return (
 		<Modal
 			modalWidth='100%'
@@ -33,8 +47,8 @@ export function AddProfileModal() {
 				<input
 					type='text'
 					placeholder='Введите имя профиля'
-					// onChange={e => setProfileName(e.target.value)}
-					// value={profileName}
+					onChange={e => setProfileName(e.target.value)}
+					value={profileName}
 					className={styles.input}
 				/>
 				<div>
@@ -43,7 +57,10 @@ export function AddProfileModal() {
 							<span className={styles.profileTypeName}>Взрослый профиль</span>
 							<span className={styles.profileTypeDesc}>без ограничений</span>
 						</div>
-						<Checkbox isCheck />
+						<Checkbox
+							isCheck={selectedProfile === 'base'}
+							onClick={() => setSelectedProfile('base')}
+						/>
 					</div>
 					<div className={styles.chooseProfileType}>
 						<div className={styles.profileType}>
@@ -52,12 +69,19 @@ export function AddProfileModal() {
 								контент 0+, 6+, 12+
 							</span>
 						</div>
-						<Checkbox isCheck={false} />
+						<Checkbox
+							isCheck={selectedProfile === 'child'}
+							onClick={() => setSelectedProfile('child')}
+						/>
 					</div>
 				</div>
 			</div>
 
-			<Button buttonText='Готово' className={styles.completeButton} />
+			<Button
+				buttonText='Готово'
+				className={styles.completeButton}
+				onClick={handleOnCompleteClick}
+			/>
 		</Modal>
 	);
 }

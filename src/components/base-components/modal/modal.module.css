@@ -38,3 +38,7 @@
 .modalContent.centerAlign {
 	align-self: center;
 }
+
+.modalContent.downAlign {
+	align-self: flex-end;
+}

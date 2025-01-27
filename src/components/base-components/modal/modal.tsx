@@ -3,13 +3,14 @@
 import { useModal } from '@/hooks/useModal';
 import { useOutside } from '@/hooks/useOutside';
 import { clsx } from 'clsx';
-import { PropsWithChildren } from 'react';
+import { CSSProperties, PropsWithChildren } from 'react';
 import styles from './modal.module.css';
 
 interface IModal {
 	modalWidth: string;
 	attachmentPos?: 'left' | 'right';
-	alignPos?: 'center' | 'top';
+	alignPos?: 'center' | 'top' | 'down';
+	style?: CSSProperties;
 	modalWrapperClassName?: string;
 	modalContentClassName?: string;
 	fullScreenModal?: boolean;
@@ -19,6 +20,7 @@ export function Modal({
 	modalWidth,
 	attachmentPos = 'left',
 	alignPos = 'center',
+	style,
 	modalWrapperClassName,
 	modalContentClassName,
 	fullScreenModal,
@@ -33,6 +35,7 @@ export function Modal({
 	return (
 		(isShow || fullScreenModal) && (
 			<div
+				style={style}
 				className={clsx(
 					styles.modalWrapper,
 					modalWrapperClassName,
@@ -43,7 +46,7 @@ export function Modal({
 					className={clsx(
 						styles.modalContent,
 						modalContentClassName,
-						alignPos === 'center' ? styles.centerAlign : styles.topAlign
+						styles[`${alignPos}Align`]
 					)}
 					style={{ width: modalWidth }}
 					ref={modalRef}

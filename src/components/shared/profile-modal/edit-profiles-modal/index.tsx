@@ -2,12 +2,24 @@
 
 import { Modal } from '@/components/base-components/modal/modal';
 import { useModal } from '@/hooks/useModal';
+import { useProfiles } from '@/hooks/useProfiles';
 import { ArrowLeft, Edit2, Plus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { AddProfileModal } from '../add-profile-modal';
+import { BaseProfileEditModal } from '../base-profile-edit-modal';
 import styles from './edit-profiles-modal.module.css';
 
 export function EditProfilesModal() {
+	const router = useRouter();
+
 	const { showModal, hideModal } = useModal();
+
+	const { profiles } = useProfiles();
+	const handleOnEditBaseProfileClick = (profileID: number) => {
+		router.push(`./?v=base-edit&id=${profileID}`);
+		showModal(<BaseProfileEditModal />);
+	};
+
 	return (
 		<Modal
 			modalWidth='100%'
@@ -30,32 +42,34 @@ export function EditProfilesModal() {
 					удаляйте ненужные
 				</p>
 				<div className={styles.profilesGrid}>
-					<div className={styles.profile}>
-						<div className={styles.coverWrapper}>
-							<img
-								src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
-								alt=''
-							/>
-						</div>
-
-						<button
-							className={styles.profileEdit}
-							// onClick={e => handleOnEditBaseProfileClick(e, profile.id)}
-						>
-							<div
-								style={{
-									position: 'absolute',
-									top: 'calc(50% + 24px / 2)',
-									left: '50%',
-									transform: 'translate(-50%, -50%)',
-								}}
-							>
-								<Edit2 size={36} strokeWidth={2} />
+					{profiles.map(profile => (
+						<div key={profile.id} className={styles.profile}>
+							<div className={styles.coverWrapper}>
+								<img
+									src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
+									alt=''
+								/>
 							</div>
-						</button>
 
-						<span className={styles.profileName}>Основной профиль</span>
-					</div>
+							<button
+								className={styles.profileEdit}
+								onClick={() => handleOnEditBaseProfileClick(profile.id)}
+							>
+								<div
+									style={{
+										position: 'absolute',
+										top: 'calc(50% + 24px / 2)',
+										left: '50%',
+										transform: 'translate(-50%, -50%)',
+									}}
+								>
+									<Edit2 size={36} strokeWidth={2} />
+								</div>
+							</button>
+
+							<span className={styles.profileName}>{profile.profileName}</span>
+						</div>
+					))}
 
 					<div className={styles.profile}>
 						<button

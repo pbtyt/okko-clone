@@ -20,14 +20,23 @@ import {
 } from 'lucide-react';
 
 import { Button } from '@/components/base-components/button';
+import { useProfiles } from '@/hooks/useProfiles';
 import clsx from 'clsx';
 import { AddProfileModal } from './add-profile-modal';
 import { EditProfilesModal } from './edit-profiles-modal';
 import styles from './profile-modal.module.css';
 
 export function ProfileModal() {
+	const { profiles, currentActiveProfile, switchProfile } = useProfiles();
+
 	const { hideModal, showModal } = useModal();
 	const handleOnAddNewProfileClick = () => showModal(<AddProfileModal />);
+	const handleOnProfileSelect = (profileID: number) => {
+		if (profileID === currentActiveProfile.id) return;
+
+		switchProfile(profileID);
+	};
+
 	return (
 		<Modal
 			modalWidth='100%'
@@ -54,24 +63,27 @@ export function ProfileModal() {
 			<div className={styles.modalContent}>
 				<div className={styles.profilesManagement}>
 					<div className={styles.profiles}>
-						<div className={clsx(styles.profile, styles.active)}>
-							<div className={clsx(styles.coverWrapper)}>
-								<img
-									src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-									alt=''
-								/>
+						{profiles.map(profile => (
+							<div
+								key={profile.id}
+								className={clsx(
+									styles.profile,
+									profile.id === currentActiveProfile.id && styles.active
+								)}
+								onClick={() => handleOnProfileSelect(profile.id)}
+							>
+								<div className={clsx(styles.coverWrapper)}>
+									<img
+										src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
+										alt=''
+									/>
+								</div>
+								<span className={styles.profileName}>
+									{profile.profileName}
+								</span>
 							</div>
-							<span className={styles.profileName}>Основной профиль</span>
-						</div>
-						<div className={styles.profile}>
-							<div className={clsx(styles.coverWrapper)}>
-								<img
-									src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-									alt=''
-								/>
-							</div>
-							<span className={styles.profileName}>Детский профиль</span>
-						</div>
+						))}
+
 						<div className={clsx(styles.profile, styles.button)}>
 							<button
 								className={styles.addNewProfile}
