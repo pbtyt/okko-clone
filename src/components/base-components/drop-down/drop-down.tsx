@@ -1,8 +1,8 @@
 'use client';
 
-import { useDropDown } from '@/hooks/useDropDown';
-import { useOutside } from '@/hooks/useOutside';
-import { getSize } from '@/utils/getElementSize';
+import { useDropDown } from '@/shared/hooks/useDropDown';
+import { useOutside } from '@/shared/hooks/useOutside';
+import { getSize } from '@/shared/utils/getElementSize';
 import { clsx } from 'clsx';
 import { PropsWithChildren, useEffect, useRef } from 'react';
 import styles from './drop-down.module.css';

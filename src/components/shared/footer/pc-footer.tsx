@@ -1,4 +1,4 @@
-import { Button } from '@/components/base-components/button';
+import { Button } from '@/shared/ui/Button';
 import { Dribbble, Facebook, Instagram, Linkedin, Twitch } from 'lucide-react';
 import Link from 'next/link';
 import styles from './footer.module.css';

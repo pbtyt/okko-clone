@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useProfiles } from '@/shared/hooks/useProfiles';
+import { Button } from '@/shared/ui/Button';
 import { useProfilesStore } from '@/store/profiles.store';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';

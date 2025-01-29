@@ -2,8 +2,8 @@
 
 import { DropDownItem } from '@/components/base-components/drop-down-item/drop-down-item';
 import { DropDown } from '@/components/base-components/drop-down/drop-down';
-import { SITE_ROUTES_BASE } from '@/config/page-url.config';
-import { useProfiles } from '@/hooks/useProfiles';
+import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
+import { useProfiles } from '@/shared/hooks/useProfiles';
 import clsx from 'clsx';
 import { Check, Edit, Settings } from 'lucide-react';
 import Link from 'next/link';

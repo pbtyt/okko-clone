@@ -1,5 +1,5 @@
 import { ModalContext } from '@/providers/modal-provider';
-import { toggleBodyOverflow } from '@/utils/toggleBodyOverflow';
+import { toggleBodyOverflow } from '@/shared/utils/toggleBodyOverflow';
 import { ReactNode, useContext } from 'react';
 
 export const useModal = () => {

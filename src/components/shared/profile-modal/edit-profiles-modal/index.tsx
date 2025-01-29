@@ -1,8 +1,8 @@
 'use client';
 
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useModal } from '@/shared/hooks/useModal';
+import { useProfiles } from '@/shared/hooks/useProfiles';
 import { ArrowLeft, ChevronRight, Edit2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { AddProfileModal } from '../add-profile-modal';

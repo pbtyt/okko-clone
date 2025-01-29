@@ -1,4 +1,4 @@
-import { Scroll } from '@/components/base-components/scroll';
+import { Scroll } from '@/shared/ui/Scroll';
 import { PropsWithChildren } from 'react';
 import styles from './movies-scroll.module.css';
 

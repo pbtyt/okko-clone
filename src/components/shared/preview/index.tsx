@@ -1,7 +1,7 @@
 'use client';
 
 import { Popping } from '@/components/base-components/popping';
-import { usePreview } from '@/hooks/usePreview';
+import { usePreview } from '@/shared/hooks/usePreview';
 import { Ban, Bookmark, Eye, Play } from 'lucide-react';
 import Link from 'next/link';
 import { RefObject, useRef } from 'react';

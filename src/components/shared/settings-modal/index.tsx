@@ -1,7 +1,7 @@
 'use client';
 
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
+import { useModal } from '@/shared/hooks/useModal';
 import { ArrowLeft, MonitorDown, MonitorPlay } from 'lucide-react';
 import styles from './settings-modal.module.css';
 

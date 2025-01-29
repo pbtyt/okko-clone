@@ -1,5 +1,5 @@
-import { MOVIE_FAVORITE_STORAGE_KEY } from '@/constants/localstorage.constants';
 import { MOVIES_EXAMPLE_DATA } from '@/data/movies.data';
+import { MOVIE_FAVORITE_STORAGE_KEY } from '@/shared/constants/localstorage.constants';
 import { MovieMinimalType } from '@/types/movie.types';
 import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';

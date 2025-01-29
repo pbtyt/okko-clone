@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
+import { Button } from '@/shared/ui/Button';
 import { Star } from 'lucide-react';
 import { useState } from 'react';
 import styles from './voting.module.css';

@@ -1,7 +1,7 @@
 'use client';
 
-import { SITE_ROUTES_BASE } from '@/config/page-url.config';
 import { SETTINGS_TAB_DATA } from '@/data/settings-tab.data';
+import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

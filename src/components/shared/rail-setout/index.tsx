@@ -1,4 +1,4 @@
-import { Scroll } from '@/components/base-components/scroll';
+import { Scroll } from '@/shared/ui/Scroll';
 import {
 	BookOpenText,
 	Box,

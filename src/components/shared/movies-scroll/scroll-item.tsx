@@ -1,9 +1,9 @@
 'use client';
 
-import { useModal } from '@/hooks/useModal';
-import { usePreview } from '@/hooks/usePreview';
-import { getPosition } from '@/utils/getElementPosition';
-import { getSize } from '@/utils/getElementSize';
+import { useModal } from '@/shared/hooks/useModal';
+import { usePreview } from '@/shared/hooks/usePreview';
+import { getPosition } from '@/shared/utils/getElementPosition';
+import { getSize } from '@/shared/utils/getElementSize';
 import { useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Card } from '../card';

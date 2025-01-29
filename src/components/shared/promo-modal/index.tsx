@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
 import { Modal } from '@/components/base-components/modal/modal';
+import { Button } from '@/shared/ui/Button';
 import { useState } from 'react';
 import styles from './promo-modal.module.css';
 export function PromoModal() {

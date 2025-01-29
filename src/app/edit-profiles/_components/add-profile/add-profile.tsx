@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
-import { Checkbox } from '@/components/base-components/checkbox/checkbox';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useProfiles } from '@/shared/hooks/useProfiles';
+import { Button } from '@/shared/ui/Button';
+import { Checkbox } from '@/shared/ui/Checkbox';
 import { type ProfileClassType } from '@/types/profile.types';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';

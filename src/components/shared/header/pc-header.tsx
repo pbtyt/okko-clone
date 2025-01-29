@@ -1,10 +1,10 @@
 'use client';
 
-import { SITE_ROUTES_BASE } from '@/config/page-url.config';
-import { useDropDown } from '@/hooks/useDropDown';
-import { useModal } from '@/hooks/useModal';
-import { getPosition } from '@/utils/getElementPosition';
-import { getSize } from '@/utils/getElementSize';
+import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
+import { useDropDown } from '@/shared/hooks/useDropDown';
+import { useModal } from '@/shared/hooks/useModal';
+import { getPosition } from '@/shared/utils/getElementPosition';
+import { getSize } from '@/shared/utils/getElementSize';
 import clsx from 'clsx';
 import { Gift, Search, X } from 'lucide-react';
 import Link from 'next/link';

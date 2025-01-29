@@ -1,6 +1,6 @@
 'use client';
 
-import { SITE_ROUTES_BASE } from '@/config/page-url.config';
+import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
 import clsx from 'clsx';
 import { Bookmark, Home, Search, ShoppingBag, Volleyball } from 'lucide-react';
 import Link from 'next/link';

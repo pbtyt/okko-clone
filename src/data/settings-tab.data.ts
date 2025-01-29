@@ -1,4 +1,4 @@
-import { SETTINGS_ROUTES } from '@/config/page-url.config';
+import { SETTINGS_ROUTES } from '@/shared/config/page-url.config';
 
 type SettingsTabDataType = Array<{ id: number; label: string; link: string }>;
 

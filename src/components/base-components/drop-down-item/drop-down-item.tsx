@@ -1,6 +1,6 @@
 'use client';
 
-import { useDropDown } from '@/hooks/useDropDown';
+import { useDropDown } from '@/shared/hooks/useDropDown';
 import { clsx } from 'clsx';
 import { LiHTMLAttributes, PropsWithChildren } from 'react';
 import styles from './drop-down-item.module.css';

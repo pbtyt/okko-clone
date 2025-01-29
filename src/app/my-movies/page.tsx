@@ -1,4 +1,4 @@
-import { NO_INDEX_PAGE } from '@/constants/seo.constants';
+import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants';
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { Content } from './_components/content';

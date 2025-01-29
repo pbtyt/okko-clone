@@ -3,7 +3,7 @@ import { Continue } from '@/components/shared/continue';
 import { MoviesScroll } from '@/components/shared/movies-scroll';
 import { ScrollItem } from '@/components/shared/movies-scroll/scroll-item';
 import { RailSetout } from '@/components/shared/rail-setout';
-import { NO_INDEX_PAGE } from '@/constants/seo.constants';
+import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants';
 import type { Metadata } from 'next';
 import styles from './home-page.module.css';
 

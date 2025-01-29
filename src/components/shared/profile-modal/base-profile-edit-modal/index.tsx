@@ -1,9 +1,9 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useModal } from '@/shared/hooks/useModal';
+import { useProfiles } from '@/shared/hooks/useProfiles';
+import { Button } from '@/shared/ui/Button';
 import { useProfilesStore } from '@/store/profiles.store';
 import { ArrowLeft, Trash2 } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';

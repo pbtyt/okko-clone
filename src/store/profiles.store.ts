@@ -1,5 +1,5 @@
-import { PROFILES_STORAGE_KEY } from '@/constants/localstorage.constants';
 import { BASE_PROFILES_DATA } from '@/data/profiles.data';
+import { PROFILES_STORAGE_KEY } from '@/shared/constants/localstorage.constants';
 import { ProfileClassType, ProfileType } from '@/types/profile.types';
 import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';

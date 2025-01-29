@@ -1,4 +1,4 @@
-import { Button } from '@/components/base-components/button';
+import { Button } from '@/shared/ui/Button';
 import styles from './tab-info.module.css';
 
 export function GeneralTab() {

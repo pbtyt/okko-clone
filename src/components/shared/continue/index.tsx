@@ -1,13 +1,13 @@
 'use client';
 
-import { useDropDown } from '@/hooks/useDropDown';
-import { getPosition } from '@/utils/getElementPosition';
-import { getSize } from '@/utils/getElementSize';
+import { useDropDown } from '@/shared/hooks/useDropDown';
+import { getPosition } from '@/shared/utils/getElementPosition';
+import { getSize } from '@/shared/utils/getElementSize';
 import { Ellipsis } from 'lucide-react';
 import { useRef } from 'react';
+import { Card } from '../card';
 import { ContinueDropDown } from '../continue-drop-down';
 import styles from './continue.module.css';
-import { Card } from '../card';
 
 export function Continue() {
 	const { setDropDownPosition, setIsDropDown, isDropDown, setDropDownMenu } =
@@ -27,9 +27,8 @@ export function Continue() {
 		setDropDownMenu(<ContinueDropDown />);
 	};
 	return (
-
 		<Card
-			style={{flexDirection: 'column', background: 'none'}}
+			style={{ flexDirection: 'column', background: 'none' }}
 			footer={
 				<div className={styles.footerWrapper}>
 					<div className={styles.progress}></div>
@@ -73,9 +72,9 @@ export function Continue() {
 		// 			alt='cw poster'
 		// 			className={styles.scrollItemPoster}
 		// 		/>
-	
+
 		// 	</div>
-			
+
 		// </div>
 	);
 }

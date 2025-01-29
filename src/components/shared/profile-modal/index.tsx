@@ -1,7 +1,7 @@
 'use client';
 
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
+import { useModal } from '@/shared/hooks/useModal';
 import {
 	ArrowLeft,
 	BadgeCheck,
@@ -19,8 +19,8 @@ import {
 	Tv,
 } from 'lucide-react';
 
-import { Button } from '@/components/base-components/button';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useProfiles } from '@/shared/hooks/useProfiles';
+import { Button } from '@/shared/ui/Button';
 import clsx from 'clsx';
 import { SettingsModal } from '../settings-modal';
 import { MyDevicesModal } from '../settings-modal/my-devices-modal';

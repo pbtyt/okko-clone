@@ -2,7 +2,7 @@ import { DropDownContainer } from '@/components/shared/drop-down-container';
 import { Footer } from '@/components/shared/footer';
 import { Header } from '@/components/shared/header';
 import { Preview } from '@/components/shared/preview';
-import { SITE_NAME } from '@/constants/seo.constants';
+import { SITE_NAME } from '@/shared/constants/seo.constants';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Modals } from './_components/modals';

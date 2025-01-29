@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
 import { CatalogCollectionCard } from '@/components/shared/catalog-collection-card';
+import { Button } from '@/shared/ui/Button';
 import clsx from 'clsx';
 import { useState } from 'react';
 import styles from './collections.module.css';

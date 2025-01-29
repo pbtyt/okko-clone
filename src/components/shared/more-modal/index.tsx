@@ -1,7 +1,7 @@
 'use client';
 
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
+import { useModal } from '@/shared/hooks/useModal';
 import { ArrowLeft } from 'lucide-react';
 import { ScrollItem } from '../movies-scroll/scroll-item';
 import styles from './more-modal.module.css';

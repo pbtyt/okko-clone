@@ -1,10 +1,10 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
-import { Checkbox } from '@/components/base-components/checkbox/checkbox';
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useModal } from '@/shared/hooks/useModal';
+import { useProfiles } from '@/shared/hooks/useProfiles';
+import { Button } from '@/shared/ui/Button';
+import { Checkbox } from '@/shared/ui/Checkbox';
 import { ProfileClassType } from '@/types/profile.types';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';

@@ -1,4 +1,4 @@
-import { Button } from '@/components/base-components/button';
+import { Button } from '@/shared/ui/Button';
 import clsx from 'clsx';
 import { Globe } from 'lucide-react';
 import styles from './tab-info.module.css';

@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
+import { Button } from '@/shared/ui/Button';
 import { Ban, Bookmark, Eye, Play } from 'lucide-react';
 import { useFavorite } from '../hooks/useFavorite';
 

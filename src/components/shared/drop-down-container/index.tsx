@@ -1,6 +1,6 @@
 'use client';
 import { Popping } from '@/components/base-components/popping';
-import { useDropDown } from '@/hooks/useDropDown';
+import { useDropDown } from '@/shared/hooks/useDropDown';
 import styles from './drop-down-container.module.css';
 
 export function DropDownContainer() {

@@ -1,6 +1,6 @@
 'use client';
-import { Button } from '@/components/base-components/button';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useProfiles } from '@/shared/hooks/useProfiles';
+import { Button } from '@/shared/ui/Button';
 import { Edit2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';

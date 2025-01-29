@@ -1,4 +1,4 @@
-import { useProfiles } from '@/hooks/useProfiles';
+import { useProfiles } from '@/shared/hooks/useProfiles';
 import { useFavoriteStore } from '@/store/favorite.store';
 import {
 	Dispatch,

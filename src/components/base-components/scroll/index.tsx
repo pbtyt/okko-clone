@@ -1,7 +1,7 @@
 'use client';
 
 import { clsx } from 'clsx';
-import { ChevronLeft, ChevronRight, MoveLeft, MoveRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PropsWithChildren, RefObject, useRef, useState } from 'react';
 import styles from './scroll.module.css';
 
@@ -18,7 +18,6 @@ interface IArrow {
 
 function Arrow({ scrollRef, scrollStep, direction }: IArrow) {
 	const [arrowHover, setArrowHover] = useState<boolean>(false);
-	
 
 	return (
 		<div
@@ -34,8 +33,8 @@ function Arrow({ scrollRef, scrollStep, direction }: IArrow) {
 			<button
 				className={styles.arrow}
 				style={
-					arrowHover ?
-						 {
+					arrowHover
+						? {
 								display: 'block',
 								transform: `translateX(${
 									direction === ArrowDirection.Right ? '15px' : '-15px'
@@ -55,13 +54,29 @@ function Arrow({ scrollRef, scrollStep, direction }: IArrow) {
 					}
 				}}
 			>
-				
 				{direction === ArrowDirection.Right ? (
-					<ChevronRight color='rgba(255, 255, 255, 0.96)' size={15} style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}/>
+					<ChevronRight
+						color='rgba(255, 255, 255, 0.96)'
+						size={15}
+						style={{
+							position: 'absolute',
+							top: '50%',
+							left: '50%',
+							transform: 'translate(-50%, -50%)',
+						}}
+					/>
 				) : (
-					<ChevronLeft color='rgba(255, 255, 255, 0.96)' size={15} style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}/>
+					<ChevronLeft
+						color='rgba(255, 255, 255, 0.96)'
+						size={15}
+						style={{
+							position: 'absolute',
+							top: '50%',
+							left: '50%',
+							transform: 'translate(-50%, -50%)',
+						}}
+					/>
 				)}
-				
 			</button>
 		</div>
 	);

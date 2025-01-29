@@ -1,14 +1,14 @@
 'use client';
 
-import { SITE_ROUTES_BASE } from '@/config/page-url.config';
+import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
+import { useModal } from '@/shared/hooks/useModal';
 import Link from 'next/link';
-import styles from './header.module.css';
-import { useModal } from '@/hooks/useModal';
 import { ProfileModal } from '../profile-modal';
+import styles from './header.module.css';
 
 export function MobileHeader() {
-	const {showModal} = useModal();
-	const handleOnProfileClick = () => showModal(<ProfileModal/>);
+	const { showModal } = useModal();
+	const handleOnProfileClick = () => showModal(<ProfileModal />);
 	return (
 		<header className={styles.header}>
 			<Link href={SITE_ROUTES_BASE.HOME} className={styles.logo}>

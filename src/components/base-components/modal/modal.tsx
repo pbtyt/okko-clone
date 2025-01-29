@@ -1,7 +1,7 @@
 'use client';
 
-import { useModal } from '@/hooks/useModal';
-import { useOutside } from '@/hooks/useOutside';
+import { useModal } from '@/shared/hooks/useModal';
+import { useOutside } from '@/shared/hooks/useOutside';
 import { clsx } from 'clsx';
 import { CSSProperties, PropsWithChildren } from 'react';
 import styles from './modal.module.css';

@@ -1,8 +1,8 @@
 'use client';
 
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
-import { useProfiles } from '@/hooks/useProfiles';
+import { useModal } from '@/shared/hooks/useModal';
+import { useProfiles } from '@/shared/hooks/useProfiles';
 import { ArrowLeft, Check, CircleHelp } from 'lucide-react';
 import styles from './select-default-profile-modal.module.css';
 

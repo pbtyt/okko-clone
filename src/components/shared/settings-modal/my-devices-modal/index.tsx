@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '@/components/base-components/button';
 import { Modal } from '@/components/base-components/modal/modal';
-import { useModal } from '@/hooks/useModal';
+import { useModal } from '@/shared/hooks/useModal';
+import { Button } from '@/shared/ui/Button';
 import clsx from 'clsx';
 import { ArrowLeft, Globe } from 'lucide-react';
 import styles from './my-devices-modal.module.css';

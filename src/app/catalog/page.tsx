@@ -1,4 +1,4 @@
-import { NO_INDEX_PAGE } from '@/constants/seo.constants';
+import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants';
 import { Metadata } from 'next';
 import { Collections } from './_components/collections';
 import { Genres } from './_components/genres';

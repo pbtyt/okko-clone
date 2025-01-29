@@ -1,6 +1,6 @@
 'use client';
 
-import { getSize } from '@/utils/getElementSize';
+import { getSize } from '@/shared/utils/getElementSize';
 import clsx from 'clsx';
 import {
 	ButtonHTMLAttributes,
