@@ -12,11 +12,7 @@ export function MobileHeader() {
 	return (
 		<header className={styles.header}>
 			<Link href={SITE_ROUTES_BASE.HOME} className={styles.logo}>
-				<img
-					src='https://clients-static.okko.tv/graphics/logo/okko/okko-x05.png'
-					alt='Okko Logo'
-					className={styles.logoImg}
-				/>
+				<div className={styles.logoImg}></div>
 			</Link>
 
 			<button className={styles.navButton} onClick={handleOnProfileClick}>
