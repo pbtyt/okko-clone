@@ -1,0 +1,12 @@
+.dropDownWrapper {
+	position: relative;
+}
+
+.dropDownChooseMenu {
+	z-index: 99;
+	position: absolute;
+	top: 45px;
+	left: 0;
+
+	list-style: none;
+}

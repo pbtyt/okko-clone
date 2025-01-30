@@ -1,7 +1,8 @@
 'use client';
 
-import { Modal } from '@/components/base-components/modal/modal';
 import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Modal } from '@/shared/ui/Modal';
 import { useState } from 'react';
 import styles from './promo-modal.module.css';
 export function PromoModal() {
@@ -13,8 +14,7 @@ export function PromoModal() {
 			modalWidth='700px'
 			attachmentPos='right'
 			alignPos='top'
-			modalWrapperClassName={styles.modalWrapper}
-			modalContentClassName={styles.modalContentWrapper}
+			className={styles.modalContentWrapper}
 		>
 			<div className={styles.modalTitleWrapper}>
 				<span className={styles.modalTitle}>АКТИВАЦИЯ ПРОМОКОДА</span>
@@ -32,7 +32,7 @@ export function PromoModal() {
 					<span className={styles.stepNumber}>ШАГ {currentStep + 1}</span>
 					<span className={styles.stepDesc}>Введите промокод</span>
 					<div className={styles.stepAction}>
-						<input
+						<Input
 							type='text'
 							placeholder='Промокод'
 							value={promocode}

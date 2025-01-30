@@ -1,0 +1,10 @@
+.cardPoster {
+	border-radius: 8px;
+	border: 1px solid #252527;
+	display: block;
+	object-position: top center;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+}

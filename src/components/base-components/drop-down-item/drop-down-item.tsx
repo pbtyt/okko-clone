@@ -1,6 +1,5 @@
 'use client';
 
-import { useDropDown } from '@/shared/hooks/useDropDown';
 import { clsx } from 'clsx';
 import { LiHTMLAttributes, PropsWithChildren } from 'react';
 import styles from './drop-down-item.module.css';
@@ -14,7 +13,6 @@ export function DropDownItem({
 	children,
 	...rest
 }: PropsWithChildren<IDropDownItem>) {
-	const { setIsDropDown } = useDropDown();
 	return (
 		<li className={clsx(styles.dropDownItem, className)} {...rest}>
 			{children}

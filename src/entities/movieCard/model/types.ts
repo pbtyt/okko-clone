@@ -53,5 +53,4 @@ export type MovieType = {
 	quality: MovieQualityType[];
 };
 
-//type, for example, for localstorage
 export type MovieMinimalType = Pick<MovieType, 'id' | 'link' | 'title'>;
