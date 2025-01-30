@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import { PropsWithChildren, ReactNode, RefObject } from 'react';
+import { HTMLAttributes, PropsWithChildren, ReactNode, RefObject } from 'react';
 import styles from './Card.module.css';
 
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
 	ref?: RefObject<HTMLDivElement | null>;
 	footer?: ReactNode;
 	className?: string;
