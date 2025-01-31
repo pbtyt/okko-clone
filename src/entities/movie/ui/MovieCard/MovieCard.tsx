@@ -1,5 +1,5 @@
+import type { MovieType } from '@/shared/api/types';
 import { Card } from '@/shared/ui/Card';
-import { MovieType } from '@/types/movie.types';
 import styles from './MovieCard.module.css';
 
 interface MovieCardProps {

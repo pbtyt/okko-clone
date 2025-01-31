@@ -1,22 +1,18 @@
-import { Film, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
-import styles from './rail-button.module.css';
 import { ReactNode } from 'react';
+import styles from './rail-button.module.css';
 
-interface IRailButton
-{
+interface IRailButton {
 	RailButtonIcon: ReactNode;
 	RailButtonText: string;
 	RailButtonLink?: string;
 }
 
-export function RailButton(
-	{
-		RailButtonIcon,
-		RailButtonText,
-		RailButtonLink = ""
-	}: IRailButton
-) {
+export function RailButton({
+	RailButtonIcon,
+	RailButtonText,
+	RailButtonLink = '',
+}: IRailButton) {
 	return (
 		<Link href={RailButtonLink}>
 			<button className={styles.railButton}>

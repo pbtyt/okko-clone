@@ -10,9 +10,10 @@ type MovieTitleType = {
 	original: string;
 };
 
-type MovieGenreType = {
+export type MovieGenreType = {
 	id: number;
-	genreTitle: string;
+	label: string;
+	link: string;
 };
 
 type MovieFilmCreatorType = {

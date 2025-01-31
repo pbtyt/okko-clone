@@ -4,12 +4,14 @@ import styles from './Card.module.css';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
 	ref?: RefObject<HTMLDivElement | null>;
+	header?: ReactNode;
 	footer?: ReactNode;
 	className?: string;
 }
 
 export function Card({
 	ref,
+	header,
 	footer,
 	className,
 	children,
@@ -17,6 +19,7 @@ export function Card({
 }: PropsWithChildren<CardProps>) {
 	return (
 		<div className={clsx(styles.cardWrapper, className)} ref={ref} {...props}>
+			{header && <>{header}</>}
 			{children}
 			{footer && <>{footer}</>}
 		</div>
