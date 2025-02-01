@@ -1,6 +1,6 @@
 'use client';
 
-import { type ElementPositionType } from '@/types/base.types';
+import { type ElementPositionType } from '@/shared/types/base.types';
 import {
 	createContext,
 	Dispatch,

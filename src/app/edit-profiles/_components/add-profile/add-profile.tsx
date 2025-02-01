@@ -1,9 +1,10 @@
 'use client';
 
+import type { ProfileClassType } from '@/entities/profile/model/types';
 import { useProfiles } from '@/shared/hooks/useProfiles';
 import { Button } from '@/shared/ui/Button';
 import { Checkbox } from '@/shared/ui/Checkbox';
-import { type ProfileClassType } from '@/types/profile.types';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import styles from './add-profile.module.css';
@@ -29,13 +30,7 @@ export function AddProfile() {
 	return (
 		<div className={styles.profileEditWrapper}>
 			<div className={styles.profile}>
-				<div className={styles.coverWrapper}>
-					<img
-						src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
-						alt=''
-					/>
-				</div>
-
+				<ProfileImage coverWidth={152} />
 				<span className={styles.profileName}>{profileName}</span>
 			</div>
 			<div className={styles.edit}>

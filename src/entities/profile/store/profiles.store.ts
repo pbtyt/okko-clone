@@ -1,8 +1,8 @@
 import { BASE_PROFILES_DATA } from '@/data/profiles.data';
 import { PROFILES_STORAGE_KEY } from '@/shared/constants/localstorage.constants';
-import { ProfileClassType, ProfileType } from '@/types/profile.types';
 import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';
+import type { ProfileClassType, ProfileType } from '../model/types';
 
 interface IProfilesStore {
 	profiles: ProfileType[];
@@ -16,7 +16,7 @@ interface IProfilesStore {
 	deleteProfile: (deleteProfileID: number) => void;
 }
 
-export const useProfilesStore = create<IProfilesStore>()(
+export const ProfilesStore = create<IProfilesStore>()(
 	persist(
 		combine(
 			{

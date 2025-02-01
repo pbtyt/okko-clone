@@ -1,8 +1,8 @@
 'use client';
 
 import { ScrollItem } from '@/components/shared/movies-scroll/scroll-item';
-import { useFavoriteStore } from '@/store/favorite.store';
-import { MovieMinimalType } from '@/types/movie.types';
+import { FavoriteStore } from '@/entities/favorite/';
+import { MovieMinimalType } from '@/shared/api/types';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { type tabType } from './tabs/tabs';
@@ -14,7 +14,7 @@ export function SelectedTabContent() {
 	const [data, setData] = useState<MovieMinimalType[]>(
 		[] as MovieMinimalType[]
 	);
-	const { movies } = useFavoriteStore();
+	const { movies } = FavoriteStore();
 
 	useEffect(() => {
 		switch (tabParam) {

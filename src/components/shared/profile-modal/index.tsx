@@ -21,6 +21,7 @@ import {
 
 import { useProfiles } from '@/shared/hooks/useProfiles';
 import { Button } from '@/shared/ui/Button';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import clsx from 'clsx';
 import { SettingsModal } from '../settings-modal';
 import { MyDevicesModal } from '../settings-modal/my-devices-modal';
@@ -76,12 +77,10 @@ export function ProfileModal() {
 								)}
 								onClick={() => handleOnProfileSelect(profile.id)}
 							>
-								<div className={clsx(styles.coverWrapper)}>
-									<img
-										src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-										alt=''
-									/>
-								</div>
+								<ProfileImage
+									coverWidth={profile.id === currentActiveProfile.id ? 52 : 36}
+									border={profile.id === currentActiveProfile.id}
+								/>
 								<span className={styles.profileName}>
 									{profile.profileName}
 								</span>

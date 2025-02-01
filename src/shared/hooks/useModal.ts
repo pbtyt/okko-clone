@@ -1,4 +1,4 @@
-import { ModalContext } from '@/providers/modal-provider';
+import { ModalContext } from '@/app/(providers)/modal-provider';
 import { toggleBodyOverflow } from '@/shared/utils/toggleBodyOverflow';
 import { ReactNode, useContext } from 'react';
 

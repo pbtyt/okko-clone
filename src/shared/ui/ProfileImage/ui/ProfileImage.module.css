@@ -1,0 +1,17 @@
+.coverWrapper {
+	width: 85px;
+	position: relative;
+}
+
+.coverWrapper.border::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 50%;
+	border: 2px solid #8776f9;
+	margin: -4px;
+}

@@ -27,11 +27,7 @@
 	justify-content: center;
 }
 
-.profileCoverWrapper {
-	width: 85px;
-}
-
-.profileCoverWrapper img {
+.profileImg {
 	border-radius: 50%;
 }
 

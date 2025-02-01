@@ -1,6 +1,6 @@
 import { MOVIES_EXAMPLE_DATA } from '@/data/movies.data';
+import type { MovieMinimalType } from '@/shared/api/types';
 import { MOVIE_FAVORITE_STORAGE_KEY } from '@/shared/constants/localstorage.constants';
-import { MovieMinimalType } from '@/types/movie.types';
 import { create } from 'zustand';
 import { combine, persist } from 'zustand/middleware';
 
@@ -12,7 +12,7 @@ interface IFavoriteStore {
 	removeMovie: (movieId: number, profileID: number) => void;
 }
 
-export const useFavoriteStore = create<IFavoriteStore>()(
+export const FavoriteStore = create<IFavoriteStore>()(
 	persist(
 		combine({ movies: [] as MovieStorageType[] }, (set, get) => {
 			return {

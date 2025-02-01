@@ -65,16 +65,3 @@
 	font-weight: 600;
 	color: rgba(255, 255, 255, 0.96);
 }
-
-.dropDownItem.selected .profileImgWrapper::after {
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	border-radius: 50%;
-	border: 2px solid #8776f9;
-	margin: -4px;
-}

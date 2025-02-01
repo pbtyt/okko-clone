@@ -1,6 +1,6 @@
-import { DropDownProvider } from '@/providers/dropdown-provider';
-import { ModalProvider } from '@/providers/modal-provider';
-import { PreviewProvider } from '@/providers/preview-provider';
+import { DropDownProvider } from '@/app/(providers)/dropdown-provider';
+import { ModalProvider } from '@/app/(providers)/modal-provider';
+import { PreviewProvider } from '@/app/(providers)/preview-provider';
 import { PropsWithChildren } from 'react';
 
 export function Providers({ children }: PropsWithChildren<unknown>) {

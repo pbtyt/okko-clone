@@ -1,6 +1,6 @@
 'use client';
 
-import { ModalContext } from '@/providers/modal-provider';
+import { ModalContext } from '@/app/(providers)/modal-provider';
 import { Fragment, useContext } from 'react';
 
 export function Modals() {

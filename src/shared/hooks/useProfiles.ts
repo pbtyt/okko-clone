@@ -1,5 +1,8 @@
-import { useProfilesStore } from '@/store/profiles.store';
-import { ProfileClassType, ProfileType } from '@/types/profile.types';
+import { ProfilesStore } from '@/entities/profile/';
+import type {
+	ProfileClassType,
+	ProfileType,
+} from '@/entities/profile/model/types';
 
 type TypeOut = {
 	profiles: ProfileType[];
@@ -20,7 +23,7 @@ export const useProfiles = (): TypeOut => {
 		currentActiveProfile,
 		switchProfile,
 		profiles: profilesStore,
-	} = useProfilesStore();
+	} = ProfilesStore();
 
 	const addProfile = (
 		newProfileName: string,

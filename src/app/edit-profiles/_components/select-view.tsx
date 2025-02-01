@@ -11,6 +11,7 @@ type EditParamType = 'base-edit' | 'child-edit' | 'add' | 'manage';
 
 export function SelectView() {
 	const param = useSearchParams();
+
 	const editParam: EditParamType =
 		(param.get('v') as EditParamType) || 'manage';
 	const [component, setComponent] = useState<ReactNode>(null);

@@ -1,7 +1,7 @@
 import {
 	DropDownContext,
 	type DropDownContextType,
-} from '@/providers/dropdown-provider';
+} from '@/app/(providers)/dropdown-provider';
 import { useContext } from 'react';
 
 export const useDropDown = (): DropDownContextType => {

@@ -3,6 +3,7 @@
 import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
 import { useDropDown } from '@/shared/hooks/useDropDown';
 import { useModal } from '@/shared/hooks/useModal';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { getPosition } from '@/shared/utils/getElementPosition';
 import { getSize } from '@/shared/utils/getElementSize';
 import clsx from 'clsx';
@@ -102,13 +103,7 @@ export function PCHeader() {
 						ref={profileButtonRef}
 						onClick={handleOnProfileClick}
 					>
-						<div className={styles.profileButton}>
-							<img
-								src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-								alt=''
-								className={styles.profileImg}
-							/>
-						</div>
+						<ProfileImage coverWidth={44} />
 					</button>
 				</div>
 			</nav>

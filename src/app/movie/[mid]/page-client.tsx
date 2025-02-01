@@ -1,7 +1,7 @@
 'use client';
 
 import { MOVIES_EXAMPLE_DATA } from '@/data/movies.data';
-import { MovieType } from '@/types/movie.types';
+import { MovieType } from '@/shared/api/types';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -50,7 +50,7 @@ export default function MovieClientPage() {
 						</div>
 						<span>{movieData?.year}</span>
 						{movieData?.genres.map(genreData => (
-							<span key={genreData.id}>{genreData.genreTitle}</span>
+							<span key={genreData.id}>{genreData.label}</span>
 						))}
 						<span>{movieData?.time}</span>
 						<span>Rus, Eng</span>
@@ -129,7 +129,7 @@ export default function MovieClientPage() {
 							<div className={styles.movieStatItemTitle}>Жанр</div>
 							<div className={styles.movieStatItemValue}>
 								{movieData?.genres
-									.map(el => el.genreTitle)
+									.map(el => el.label)
 									.join(', ')
 									.trim()}
 							</div>

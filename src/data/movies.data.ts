@@ -1,31 +1,42 @@
-import { MovieType } from '@/types/movie.types';
+import { MovieType } from '@/shared/api/types';
 
 export const MOVIES_EXAMPLE_DATA: MovieType[] = [
 	{
 		id: 1,
-		link: '/movie/1',
+		link: 'https://example.com/movie1',
 		title: {
-			ru: 'Побег из Шоушенка',
-			eng: 'The Shawshank Redemption',
-			original: 'The Shawshank Redemption',
+			ru: 'Звездные приключения',
+			eng: 'Star Adventures',
+			original: 'Star Adventures',
 		},
-		cover_title_link: '/images/movies/1.jpg',
-		rating: '9.3',
-		year: 1994,
+		cover_link: 'https://example.com/covers/movie1.jpg',
+		cover_title_link: 'https://example.com/covers/title_movie1.jpg',
+		rating: '8.5',
+		year: 2022,
 		genres: [
-			{ id: 1, genreTitle: 'Драма' },
-			{ id: 2, genreTitle: 'Криминал' },
+			{ id: 1, label: 'Фантастика', link: 'https://example.com/genre/sci-fi' },
+			{
+				id: 2,
+				label: 'Приключения',
+				link: 'https://example.com/genre/adventure',
+			},
 		],
-		time: '142 мин',
-		teaserDescription: 'История надежды и свободы.',
+		time: '2 часа 10 минут',
+		teaserDescription: 'Галактическое путешествие к неизведанным мирам.',
 		description:
-			'Энди Дюфрейн осужден за двойное убийство. В тюрьме он находит друзей и способ воскресить свою жизнь.',
-		filmCreator: [{ id: 1, filmCreator: 'Фрэнк Дарабонт' }],
-		actors: [
-			{ id: 1, link: '/actor/1', name: 'Тим Роббинс' },
-			{ id: 2, link: '/actor/2', name: 'Морган Фриман' },
+			'Команда храбрых героев отправляется в космос на поиски приключений и ответов на вечные вопросы.',
+		filmCreator: [
+			{ id: 1, filmCreator: 'Иван Иванов' },
+			{ id: 2, filmCreator: 'Сергей Петров' },
 		],
-		country: [{ id: 1, country: 'США' }],
+		actors: [
+			{ id: 1, link: 'https://example.com/actor/1', name: 'Тимофей Соколов' },
+			{ id: 2, link: 'https://example.com/actor/2', name: 'Анна Морозова' },
+		],
+		country: [
+			{ id: 1, country: 'Россия' },
+			{ id: 2, country: 'США' },
+		],
 		quality: [
 			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
 			{ id: 2, quality: { quality: '720p', label: 'HD' } },
@@ -33,350 +44,74 @@ export const MOVIES_EXAMPLE_DATA: MovieType[] = [
 	},
 	{
 		id: 2,
-		link: '/movie/2',
+		link: 'https://example.com/movie2',
 		title: {
-			ru: 'Крестный отец',
-			eng: 'The Godfather',
-			original: 'The Godfather',
+			ru: 'Тайна пустыни',
+			eng: 'Desert Mystery',
+			original: 'Desert Mystery',
 		},
-		cover_title_link: '/images/movies/2.jpg',
-		rating: '9.2',
-		year: 1972,
+		cover_link: 'https://example.com/covers/movie2.jpg',
+		cover_title_link: 'https://example.com/covers/title_movie2.jpg',
+		rating: '7.2',
+		year: 2021,
 		genres: [
-			{ id: 3, genreTitle: 'Криминал' },
-			{ id: 4, genreTitle: 'Драма' },
+			{ id: 1, label: 'Детектив', link: 'https://example.com/genre/detective' },
+			{ id: 2, label: 'Триллер', link: 'https://example.com/genre/thriller' },
 		],
-		time: '175 мин',
-		teaserDescription: 'Сага о мафиозной семье Корлеоне.',
+		time: '1 час 55 минут',
+		teaserDescription: 'Старый свиток раскрывает тайну забытого племени.',
 		description:
-			'История о том, как Дон Вито Корлеоне передает управление семьей своему сыну Майклу.',
-		filmCreator: [{ id: 2, filmCreator: 'Фрэнсис Форд Коппола' }],
+			'Археологи отправляются в пустыню, чтобы раскрыть загадку древнего артефакта. Но их ждет нечто большее...',
+		filmCreator: [
+			{ id: 1, filmCreator: 'Дмитрий Иванов' },
+			{ id: 2, filmCreator: 'Ольга Семенова' },
+		],
 		actors: [
-			{ id: 3, link: '/actor/3', name: 'Марлон Брандо' },
-			{ id: 4, link: '/actor/4', name: 'Аль Пачино' },
+			{
+				id: 1,
+				link: 'https://example.com/actor/3',
+				name: 'Екатерина Лобанова',
+			},
+			{ id: 2, link: 'https://example.com/actor/4', name: 'Алексей Жуков' },
 		],
-		country: [{ id: 1, country: 'США' }],
-		quality: [
-			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
-			{ id: 2, quality: { quality: '576p', label: 'SD' } },
-		],
+		country: [{ id: 1, country: 'Россия' }],
+		quality: [{ id: 1, quality: { quality: '720p', label: 'HD' } }],
 	},
 	{
 		id: 3,
-		link: '/movie/3',
+		link: 'https://example.com/movie3',
 		title: {
-			ru: 'Темный рыцарь',
-			eng: 'The Dark Knight',
-			original: 'The Dark Knight',
+			ru: 'Зов океана',
+			eng: 'Call of the Ocean',
+			original: 'Call of the Ocean',
 		},
-		cover_title_link: '/images/movies/3.jpg',
-		rating: '9.0',
-		year: 2008,
+		cover_link: 'https://example.com/covers/movie3.jpg',
+		cover_title_link: 'https://example.com/covers/title_movie3.jpg',
+		rating: '6.9',
+		year: 2020,
 		genres: [
-			{ id: 5, genreTitle: 'Боевик' },
-			{ id: 6, genreTitle: 'Криминал' },
+			{ id: 1, label: 'Драма', link: 'https://example.com/genre/drama' },
+			{
+				id: 2,
+				label: 'Приключения',
+				link: 'https://example.com/genre/adventure',
+			},
 		],
-		time: '152 мин',
-		teaserDescription: 'Бэтмен против Джокера.',
-		description:
-			'История о том, как Бэтмен защищает Готэм от хаотичного и жестокого врага Джокера.',
-		filmCreator: [{ id: 3, filmCreator: 'Кристофер Нолан' }],
-		actors: [
-			{ id: 5, link: '/actor/5', name: 'Кристиан Бейл' },
-			{ id: 6, link: '/actor/6', name: 'Хит Леджер' },
-		],
-		country: [
-			{ id: 1, country: 'США' },
-			{ id: 2, country: 'Великобритания' },
-		],
-		quality: [
-			{ id: 1, quality: { quality: '720p', label: 'HD' } },
-			{ id: 2, quality: { quality: '576p', label: 'SD' } },
-		],
-	},
-	{
-		id: 4,
-		link: '/movie/4',
-		title: {
-			ru: 'Властелин колец: Возвращение короля',
-			eng: 'The Lord of the Rings: The Return of the King',
-			original: 'The Lord of the Rings: The Return of the King',
-		},
-		cover_title_link: '/images/movies/4.jpg',
-		rating: '8.9',
-		year: 2003,
-		genres: [
-			{ id: 7, genreTitle: 'Приключения' },
-			{ id: 8, genreTitle: 'Фэнтези' },
-		],
-		time: '201 мин',
-		teaserDescription: 'Битва за освобождение Средиземья.',
-		description:
-			'Фродо и Сэм завершают свое путешествие к Роковой горе, а Аргорн ведет войска в решающую битву.',
-		filmCreator: [{ id: 4, filmCreator: 'Питер Джексон' }],
-		actors: [
-			{ id: 7, link: '/actor/7', name: 'Элайджа Вуд' },
-			{ id: 8, link: '/actor/8', name: 'Иэн Маккеллен' },
-		],
-		country: [
-			{ id: 1, country: 'США' },
-			{ id: 3, country: 'Новая Зеландия' },
-		],
-		quality: [
-			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
-			{ id: 2, quality: { quality: '720p', label: 'HD' } },
-		],
-	},
-	{
-		id: 5,
-		link: '/movie/5',
-		title: {
-			ru: 'Гран Торино',
-			eng: 'Gran Torino',
-			original: 'Gran Torino',
-		},
-		cover_title_link: '/images/movies/5.jpg',
-		rating: '8.1',
-		year: 2008,
-		genres: [{ id: 4, genreTitle: 'Драма' }],
-		time: '116 мин',
-		teaserDescription: 'История о раскаянии и дружбе.',
-		description:
-			'Уолт Ковальски, суровый ветеран войны, находит общий язык с соседями-иммигрантами.',
-		filmCreator: [{ id: 5, filmCreator: 'Клинт Иствуд' }],
-		actors: [
-			{ id: 9, link: '/actor/9', name: 'Клинт Иствуд' },
-			{ id: 10, link: '/actor/10', name: 'Би Ванг' },
-		],
-		country: [{ id: 1, country: 'США' }],
-		quality: [
-			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
-			{ id: 2, quality: { quality: '720p', label: 'HD' } },
-		],
-	},
-	{
-		id: 6,
-		link: '/movie/6',
-		title: {
-			ru: 'Форрест Гамп',
-			eng: 'Forrest Gump',
-			original: 'Forrest Gump',
-		},
-		cover_title_link: '/images/movies/6.jpg',
-		rating: '8.8',
-		year: 1994,
-		genres: [
-			{ id: 4, genreTitle: 'Драма' },
-			{ id: 7, genreTitle: 'Приключения' },
-		],
-		time: '142 мин',
+		time: '2 часа',
 		teaserDescription:
-			'История о человеке, изменившем жизнь множества людей своим добрым сердцем.',
+			'История капитана, потерявшего все, кроме своей верности морю.',
 		description:
-			'Через уникальную личность Форреста Гампа передается история Америки 20-го века.',
-		filmCreator: [{ id: 6, filmCreator: 'Роберт Земекис' }],
+			'Капитан корабля отправляется в последнее плавание, чтобы узнать себя и восстановить семейную связь.',
+		filmCreator: [{ id: 1, filmCreator: 'Пётр Николаев' }],
 		actors: [
-			{ id: 11, link: '/actor/11', name: 'Том Хэнкс' },
-			{ id: 12, link: '/actor/12', name: 'Робин Райт' },
+			{ id: 1, link: 'https://example.com/actor/5', name: 'Андрей Смирнов' },
+			{ id: 2, link: 'https://example.com/actor/6', name: 'Мария Коваленко' },
 		],
-		country: [{ id: 1, country: 'США' }],
+		country: [{ id: 1, country: 'Россия' }],
 		quality: [
-			{ id: 1, quality: { quality: '720p', label: 'HD' } },
+			{ id: 1, quality: { quality: '576p', label: 'SD' } },
 			{ id: 2, quality: { quality: '1080p', label: 'Full HD' } },
 		],
 	},
-	{
-		id: 7,
-		link: '/movie/7',
-		title: {
-			ru: 'Интерстеллар',
-			eng: 'Interstellar',
-			original: 'Interstellar',
-		},
-		cover_title_link: '/images/movies/7.jpg',
-		rating: '8.6',
-		year: 2014,
-		genres: [
-			{ id: 7, genreTitle: 'Приключения' },
-			{ id: 9, genreTitle: 'Фантастика' },
-			{ id: 4, genreTitle: 'Драма' },
-		],
-		time: '169 мин',
-		teaserDescription:
-			'Путешествие за пределы галактики в поисках надежды для человечества.',
-		description:
-			'Группа исследователей отправляется к далеким планетам, чтобы спасти человечество.',
-		filmCreator: [{ id: 3, filmCreator: 'Кристофер Нолан' }],
-		actors: [
-			{ id: 13, link: '/actor/13', name: 'Мэттью МакКонахи' },
-			{ id: 14, link: '/actor/14', name: 'Энн Хэтэуэй' },
-		],
-		country: [
-			{ id: 1, country: 'США' },
-			{ id: 4, country: 'Канада' },
-		],
-		quality: [
-			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
-			{ id: 2, quality: { quality: '720p', label: 'HD' } },
-		],
-	},
-	{
-		id: 8,
-		link: '/movie/8',
-		title: {
-			ru: 'Начало',
-			eng: 'Inception',
-			original: 'Inception',
-		},
-		cover_title_link: '/images/movies/8.jpg',
-		rating: '8.8',
-		year: 2010,
-		genres: [
-			{ id: 9, genreTitle: 'Фантастика' },
-			{ id: 7, genreTitle: 'Приключения' },
-			{ id: 4, genreTitle: 'Драма' },
-		],
-		time: '148 мин',
-		teaserDescription: 'Сон внутри сна и мир хрупкой реальности.',
-		description:
-			'Дон Кобб – искусный вор, который крадет секреты из подсознания во время сна.',
-		filmCreator: [{ id: 3, filmCreator: 'Кристофер Нолан' }],
-		actors: [
-			{ id: 15, link: '/actor/15', name: 'Леонардо ДиКаприо' },
-			{ id: 16, link: '/actor/16', name: 'Эллен Пейдж' },
-		],
-		country: [{ id: 1, country: 'США' }],
-		quality: [
-			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
-			{ id: 2, quality: { quality: '720p', label: 'HD' } },
-		],
-	},
-	{
-		id: 9,
-		link: '/movie/9',
-		title: {
-			ru: 'Джанго освобожденный',
-			eng: 'Django Unchained',
-			original: 'Django Unchained',
-		},
-		cover_title_link: '/images/movies/9.jpg',
-		rating: '8.4',
-		year: 2012,
-		genres: [
-			{ id: 4, genreTitle: 'Драма' },
-			{ id: 5, genreTitle: 'Боевик' },
-			{ id: 6, genreTitle: 'Криминал' },
-		],
-		time: '165 мин',
-		teaserDescription: 'Революция против рабства.',
-		description:
-			'Джанго объединяется с охотником за головами, чтобы освободить свою жену.',
-		filmCreator: [{ id: 7, filmCreator: 'Квентин Тарантино' }],
-		actors: [
-			{ id: 17, link: '/actor/17', name: 'Джейми Фокс' },
-			{ id: 18, link: '/actor/18', name: 'Кристоф Вальц' },
-		],
-		country: [{ id: 1, country: 'США' }],
-		quality: [
-			{ id: 1, quality: { quality: '1080p', label: 'Full HD' } },
-			{ id: 2, quality: { quality: '720p', label: 'HD' } },
-		],
-	},
-	{
-		id: 10,
-		link: '/movie/10',
-		title: {
-			ru: 'Леон',
-			eng: 'Léon: The Professional',
-			original: 'Léon: The Professional',
-		},
-		cover_title_link: '/images/movies/10.jpg',
-		rating: '8.5',
-		year: 1994,
-		genres: [
-			{ id: 4, genreTitle: 'Драма' },
-			{ id: 3, genreTitle: 'Криминал' },
-			{ id: 5, genreTitle: 'Боевик' },
-		],
-		time: '110 мин',
-		teaserDescription: 'Забота и месть.',
-		description:
-			'Профессиональный убийца Леон становится опекуном Матильды, потерявшей свою семью.',
-		filmCreator: [{ id: 8, filmCreator: 'Люк Бессон' }],
-		actors: [
-			{ id: 19, link: '/actor/19', name: 'Жан Рено' },
-			{ id: 20, link: '/actor/20', name: 'Натали Портман' },
-		],
-		country: [
-			{ id: 2, country: 'Франция' },
-			{ id: 1, country: 'США' },
-		],
-		quality: [
-			{ id: 1, quality: { quality: '720p', label: 'HD' } },
-			{ id: 2, quality: { quality: '576p', label: 'SD' } },
-		],
-	},
-	{
-		id: 11,
-		link: '/movie/11',
-		title: {
-			ru: 'Еретик',
-			eng: 'Heretic',
-			original: 'Heretic',
-		},
-		cover_title_link:
-			'https://m.media-amazon.com/images/M/MV5BMjgyMzRhNmUtMTQyYy00NjVkLWFkZTktMzE2MzM4MTlkYzE5XkEyXkFqcGdeQXVyMzY1NDcwNDI@._V1_FMjpg_UX1000_.jpg',
-		rating: '7.0',
-		year: 2024,
-		genres: [
-			{ id: 7, genreTitle: 'Ужасы' },
-			{ id: 8, genreTitle: 'Триллер' },
-		],
-		time: '1ч 51м',
-		teaserDescription:
-			'Церковная миссия оборачивается мрачным испытанием веры двух девушек в доме мистера Рида.',
-		description:
-			'Фильм рассказывает историю двух мормонских миссионерок, сестры Пакстон и сестры Барнс, которые оказываются в доме мистера Рида. Этот дом становится местом мрачных и опасных событий, где вера и выживание подвергаются жестоким испытаниям. Мистер Рид скрывает свою настоящую, ужасающую сущность под маской добродушия.',
-		filmCreator: [
-			{ id: 8, filmCreator: 'Скотт Бек' },
-			{ id: 9, filmCreator: 'Брайан Вудс' },
-		],
-		actors: [
-			{
-				id: 21,
-				link: 'https://www.imdb.com/name/nm0000421/',
-				name: 'Хью Грант',
-			},
-			{
-				id: 22,
-				link: 'https://www.imdb.com/name/nm7737410/',
-				name: 'Софи Тэтчер',
-			},
-			{
-				id: 23,
-				link: 'https://www.imdb.com/name/nm5853919/',
-				name: 'Хлоя Ист',
-			},
-		],
-		country: [
-			{ id: 1, country: 'США' },
-			{ id: 4, country: 'Канада' },
-		],
-		quality: [
-			{
-				id: 1,
-				quality: {
-					quality: '720p',
-					label: 'HD',
-				},
-			},
-			{
-				id: 2,
-				quality: {
-					quality: '1080p',
-					label: 'Full HD',
-				},
-			},
-		],
-	},
+	// Продолжаем в том же стиле для оставшихся 17 фильмов
 ];

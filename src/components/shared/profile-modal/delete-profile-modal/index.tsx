@@ -4,6 +4,7 @@ import { Modal } from '@/components/base-components/modal/modal';
 import { useModal } from '@/shared/hooks/useModal';
 import { useProfiles } from '@/shared/hooks/useProfiles';
 import { Button } from '@/shared/ui/Button';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './delete-profile-modal.module.css';
@@ -42,12 +43,13 @@ export function DeleteProfileModal({
 			modalContentClassName={styles.modalContentWrapper}
 		>
 			<div className={styles.modalContent}>
-				<div className={styles.profileCoverWrapper}>
+				{/* <div className={styles.profileCoverWrapper}>
 					<img
 						src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
 						alt=''
 					/>
-				</div>
+				</div> */}
+				<ProfileImage className={styles.profileImg} />
 				<span className={styles.title}>Удалить профиль {profileName}?</span>
 				<p className={styles.desc}>
 					История просмотров, запомненные фильмы и персональные рекомендации

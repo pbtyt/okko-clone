@@ -3,7 +3,7 @@
 import {
 	type ElementPositionType,
 	type ElementSizeType,
-} from '@/types/base.types';
+} from '@/shared/types/base.types';
 import {
 	createContext,
 	Dispatch,

@@ -1,6 +1,7 @@
 'use client';
 import { useProfiles } from '@/shared/hooks/useProfiles';
 import { Button } from '@/shared/ui/Button';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { Edit2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -36,12 +37,7 @@ export function ProfileManagement() {
 			<div className={styles.profilesGrid}>
 				{profiles.map(profile => (
 					<div className={styles.profile} key={profile.id}>
-						<div className={styles.coverWrapper}>
-							<img
-								src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
-								alt=''
-							/>
-						</div>
+						<ProfileImage coverWidth={152} />
 						{isEditMode && (
 							<button
 								className={styles.profileEdit}

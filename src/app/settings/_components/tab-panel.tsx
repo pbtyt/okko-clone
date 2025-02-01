@@ -1,7 +1,7 @@
 'use client';
 
-import { SETTINGS_TAB_DATA } from '@/data/settings-tab.data';
 import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
+import { SETTINGS_TAB_DATA } from '@/shared/config/settings-tab.config';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -9,7 +9,7 @@ import { useState } from 'react';
 import styles from '../settings.module.css';
 
 export function TabPanel() {
-	const pathname = usePathname();
+	const pathname = usePathname()!;
 	const formattedPathname = pathname.slice(
 		1,
 		1 + SITE_ROUTES_BASE.SETTINGS.length

@@ -3,6 +3,7 @@
 import { Modal } from '@/components/base-components/modal/modal';
 import { useModal } from '@/shared/hooks/useModal';
 import { useProfiles } from '@/shared/hooks/useProfiles';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { ArrowLeft, Check, CircleHelp } from 'lucide-react';
 import styles from './select-default-profile-modal.module.css';
 
@@ -45,12 +46,7 @@ export function SelectDefaultProfileModal() {
 					</div>
 					{profiles.map(profile => (
 						<div key={profile.id} className={styles.profile}>
-							<div className={styles.coverWrapper}>
-								<img
-									src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
-									alt=''
-								/>
-							</div>
+							<ProfileImage coverWidth={48} />
 							<span>{profile.profileName}</span>
 						</div>
 					))}

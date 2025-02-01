@@ -1,15 +1,16 @@
 'use client';
 
+import { ProfilesStore } from '@/entities/profile/';
 import { useProfiles } from '@/shared/hooks/useProfiles';
 import { Button } from '@/shared/ui/Button';
-import { useProfilesStore } from '@/store/profiles.store';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './base-profile-edit.module.css';
 
 export function BaseProfileEdit() {
 	const profileID = Number(useSearchParams().get('id'));
-	const { editProfile } = useProfilesStore();
+	const { editProfile } = ProfilesStore();
 	const { profiles, deleteProfile } = useProfiles();
 	const router = useRouter();
 	const [profileName, setProfileName] = useState('');
@@ -37,12 +38,7 @@ export function BaseProfileEdit() {
 	return (
 		<div className={styles.profileEditWrapper}>
 			<div className={styles.profile}>
-				<div className={styles.coverWrapper}>
-					<img
-						src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
-						alt=''
-					/>
-				</div>
+				<ProfileImage coverWidth={152} />
 
 				<span className={styles.profileName}>{profileName}</span>
 			</div>

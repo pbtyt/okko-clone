@@ -1,4 +1,4 @@
-import { ProfileType } from '@/types/profile.types';
+import { ProfileType } from '@/entities/profile/model/types';
 
 export const BASE_PROFILES_DATA: ProfileType[] = [
 	{

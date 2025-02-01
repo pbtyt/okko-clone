@@ -1,11 +1,12 @@
 'use client';
 
 import { Modal } from '@/components/base-components/modal/modal';
+import type { ProfileClassType } from '@/entities/profile/model/types';
 import { useModal } from '@/shared/hooks/useModal';
 import { useProfiles } from '@/shared/hooks/useProfiles';
 import { Button } from '@/shared/ui/Button';
 import { Checkbox } from '@/shared/ui/Checkbox';
-import { ProfileClassType } from '@/types/profile.types';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
 import styles from './add-profile-modal.module.css';
@@ -37,12 +38,7 @@ export function AddProfileModal() {
 				<span className={styles.modalHeaderTitle}>Создание профиля</span>
 			</div>
 			<div className={styles.modalContent}>
-				<div className={styles.profileCoverWrapper}>
-					<img
-						src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=152&scale=1&quality=80&mediaType=webp'
-						alt=''
-					/>
-				</div>
+				<ProfileImage />
 
 				<input
 					type='text'

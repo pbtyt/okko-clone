@@ -1,7 +1,7 @@
 import {
 	PreviewContext,
 	type PreviewContextType,
-} from '@/providers/preview-provider';
+} from '@/app/(providers)/preview-provider';
 import { useContext } from 'react';
 
 export const usePreview = (): PreviewContextType => {

@@ -1,6 +1,6 @@
-export type GenresDataType = Array<{ id: number; label: string; link: string }>;
+import type { MovieGenreType } from '@/shared/api/types';
 
-export const GENRES_DATA = [
+export const GENRES_DATA: MovieGenreType[] = [
 	{
 		id: 1,
 		label: 'Комедии',

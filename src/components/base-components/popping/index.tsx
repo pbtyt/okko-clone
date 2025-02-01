@@ -1,4 +1,4 @@
-import { ElementPositionType } from '@/types/base.types';
+import { ElementPositionType } from '@/shared/types/base.types';
 import {
 	CSSProperties,
 	HTMLAttributes,

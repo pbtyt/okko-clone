@@ -1,4 +1,4 @@
-import { type ElementPositionType } from '@/types/base.types';
+import { type ElementPositionType } from '@/shared/types/base.types';
 
 export function getPosition(element: HTMLElement): ElementPositionType {
 	const rect: DOMRect = element.getBoundingClientRect();

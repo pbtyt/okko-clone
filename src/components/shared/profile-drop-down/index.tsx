@@ -4,6 +4,7 @@ import { DropDownItem } from '@/components/base-components/drop-down-item/drop-d
 import { DropDown } from '@/components/base-components/drop-down/drop-down';
 import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
 import { useProfiles } from '@/shared/hooks/useProfiles';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import clsx from 'clsx';
 import { Check, Edit, Settings } from 'lucide-react';
 import Link from 'next/link';
@@ -42,13 +43,18 @@ export function ProfileDropDown() {
 					key={profile.id}
 				>
 					<div className={styles.profileItemInfo}>
-						<div className={styles.profileImgWrapper}>
+						{/* <div className={styles.profileImgWrapper}>
 							<img
 								src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
 								alt=''
 								className={styles.profileImg}
 							/>
-						</div>
+						</div> */}
+						<ProfileImage
+							coverWidth={40}
+							border={currentSelectedProfileIndex === profile.id}
+							className={styles.profileImg}
+						/>
 						<span>{profile.profileName}</span>
 					</div>
 					{currentSelectedProfileIndex === profile.id && (

@@ -2,6 +2,7 @@
 
 import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
 import { useModal } from '@/shared/hooks/useModal';
+import { ProfileImage } from '@/shared/ui/ProfileImage';
 import Link from 'next/link';
 import { ProfileModal } from '../profile-modal';
 import styles from './header.module.css';
@@ -16,13 +17,7 @@ export function MobileHeader() {
 			</Link>
 
 			<button className={styles.navButton} onClick={handleOnProfileClick}>
-				<div className={styles.profileButton}>
-					<img
-						src='//static.okko.tv/images/v4/a5c64021-ee8d-4b4a-8dae-65f2cb602845?width=40&scale=1&quality=80&mediaType=webp'
-						alt=''
-						className={styles.profileImg}
-					/>
-				</div>
+				<ProfileImage coverWidth={35} />
 			</button>
 		</header>
 	);
