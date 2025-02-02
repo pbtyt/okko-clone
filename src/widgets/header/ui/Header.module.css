@@ -1,0 +1,38 @@
+.header {
+	padding: 0 56px;
+	line-height: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.button {
+	color: rgba(255, 255, 255, 0.56);
+
+	font-size: 15px;
+	line-height: 20px;
+	font-weight: 600;
+
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	position: relative;
+
+	height: var(--header-height);
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+	.header {
+		--header-height: 2.8em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 16px;
+	}
+}

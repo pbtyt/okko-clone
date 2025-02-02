@@ -3,6 +3,7 @@
 import { SITE_ROUTES_BASE } from '@/shared/config/page-url.config';
 import { useDropDown } from '@/shared/hooks/useDropDown';
 import { useModal } from '@/shared/hooks/useModal';
+import { Logo } from '@/shared/ui/Logo';
 import { ProfileImage } from '@/shared/ui/ProfileImage';
 import { getPosition } from '@/shared/utils/getElementPosition';
 import { getSize } from '@/shared/utils/getElementSize';
@@ -39,10 +40,7 @@ export function PCHeader() {
 	return (
 		<header className={clsx(isSearch && styles.search, styles.header)}>
 			<nav className={styles.navBar}>
-				<Link href={SITE_ROUTES_BASE.HOME} className={styles.logo}>
-					<div className={styles.logoImg}></div>
-				</Link>
-
+				<Logo />
 				{!isSearch ? (
 					<ul className={styles.navButtons}>
 						<li className={clsx(styles.navButton, 1 && styles.active)}>
