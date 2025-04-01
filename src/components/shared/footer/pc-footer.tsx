@@ -57,7 +57,7 @@ export function PCFooter() {
 					}}
 				>
 					<div className={styles.column}>
-						<h3>Okko</h3>
+						<h3>Site)</h3>
 						<Link href='' className={styles.link}>
 							О нас
 						</Link>
