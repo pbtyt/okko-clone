@@ -26,7 +26,7 @@ export function MyDevicesModal() {
 			</div>
 			<div className={styles.modalContent}>
 				<div className={styles.deviceStats}>
-					<span>Смотреть Okko можно только на пяти устройствах</span>
+					<span>Смотреть Site) можно только на пяти устройствах</span>
 					<span>4 из 5</span>
 				</div>
 				<div className={styles.devicesWrapper}>

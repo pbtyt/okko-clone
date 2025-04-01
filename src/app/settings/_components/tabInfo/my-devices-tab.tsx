@@ -9,20 +9,20 @@ export function MyDevicesTab() {
 			<div className={styles.tabInfoSection}>
 				<h2 className={styles.tabInfoSectionTitle}>Мои устройства</h2>
 				<p className={styles.tabInfoSectionSubInfo}>
-					К учётной записи в Okko можно подключить до пяти устройств. Начните
+					К учётной записи в Site) можно подключить до пяти устройств. Начните
 					просмотр на одном устройстве и продолжите на другом.
 				</p>
 				<button style={{ padding: '10px 16px', marginBottom: '1rem' }}>
 					Подключить
 				</button>
 				<p className={styles.tabInfoSectionSubInfo}>
-					Или загрузите приложение «Okko Фильмы HD» для смартфона и планшета.
+					Или загрузите приложение «Site) Фильмы HD» для смартфона и планшета.
 					Доступно на iOS Android Huawei.
 				</p>
 			</div>
 			<div style={{ maxWidth: '767px' }}>
 				<div className={clsx(styles.deviceStats, styles.tabInfoSectionSubInfo)}>
-					<span>Смотреть Okko можно только на пяти устройствах</span>
+					<span>Смотреть Site) можно только на пяти устройствах</span>
 					<span>4 из 5</span>
 				</div>
 				<ul className={styles.devices}>
